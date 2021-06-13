@@ -16,7 +16,6 @@ theme:
   favicon: img/Ready32x32.png
   features:
     - navigation.tabs
-    - navigation.instant
   palette:
     - scheme: default
       toggle:

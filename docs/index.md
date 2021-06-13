@@ -9,15 +9,18 @@ description: Virtual Motion Trackerについて
 
 ## What is Virtual Motion Tracker / バーチャルモーショントラッカーとは
 
-The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices.  
-Very easy, simple, and robust.  
+An easy-to-use virtual tracker driver for OpenVR. With your own device, your own software, and any.  
+自作デバイス、自作のソフトウェアで、簡単に使える OpenVR 仮想トラッカードライバです。  
 
-シンプルなOpenVR 仮想トラッカードライバです。  
+You can send pose (position and rotation) with OSC Protocol and use it as a virtual tracker on SteamVR.  
 OSCで姿勢(座標や回転)を受け取り、仮想的なトラッカーとしてSteamVR上で利用することができます。  
-  
-今まで難易度の高かったVRトラッキングデバイスの自作を、UnityでGameObjectにアタッチする程度の簡単な処理で行うことができるようになります。  
-OpenVRのサンプルと仕様に沿った作りになっており、他のドライバのようにSteamVRのアップデートの度にクラッシュすることは起きにくい作りになっています。  
-    
+
+Creating your own tracking device was extremely difficult and required a high degree of technical work. 
+独自の追跡デバイスを作成するということは非常に困難な作業であり、高度な技術的作業が必要でした。 
+
+However, from now on, by using VMT, it will be possible to do it in a simple way like attaching to a GameObject in Unity. 
+しかし、これからはVMTを用いることで、UnityでGameObjectにアタッチするような簡単な方法で行うことができるようになります。  
+
 ![](/VirtualMotionTrackerDocument/img/Architecture.png?raw=true)
 
 ## 苦労話
