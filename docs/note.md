@@ -1,4 +1,5 @@
 # VMT - VirtualMotionTracker 説明書
+
 ## 注意
 アップデートの際は、古いドライバを予めアンインストールするか、フォルダごと消してください。  
 古いドライバが読み込まれて動かないことがあります。  
@@ -127,7 +128,7 @@ reason(string): 詳細(人間が読む用)
 [hecomi/uOSC](https://github.com/hecomi/uOSC)を導入してください。  
 アタッチされたGameObjectの座標をトラッカーとして送信します。  
   
-<img src="/VirtualMotionTrackerDocument/img/unity.png"></img>
+![](/VirtualMotionTrackerDocument/img/unity.png)
   
 ```cs
 using System.Collections;

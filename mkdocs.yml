@@ -5,7 +5,10 @@ repo_url: https://github.com/gpsnmeajp/VirtualMotionTracker/
 repo_name: VirtualMotionTracker
 nav:
     - Home: index.md
-    - Download: https://github.com/gpsnmeajp/VirtualMotionTracker/releases
+    - Download: download.md
+    - Setup: setup.md
+    - Trouble: trouble.md
+    - API: api.md
 theme:
   name: material
   custom_dir: overrides
@@ -13,18 +16,21 @@ theme:
   favicon: img/Ready32x32.png
   features:
     - navigation.tabs
-    - navigation.sections
-    - navigation.expand
+    - navigation.instant
   palette:
     - scheme: default
-      primary: black
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
     - scheme: slate
-      primary: black
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
+extra_css:
+    - stylesheets/extra.css
 markdown_extensions:
   - meta
+  - admonition
+  - toc:
+      permalink: ⚓︎
+      toc_depth: 3

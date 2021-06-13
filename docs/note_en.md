@@ -17,12 +17,12 @@ Installation, Uninstallation, Room setup.
 **2. Launch vmt_manager.exe**  
 
 **3. Allow vmt_manager.exe in firewall**  
-<img src="/VirtualMotionTrackerDocument/img/screen1A.png" height="300px"></img>
+![](/VirtualMotionTrackerDocument/img/screen1A.png" height="300px)
 
 **4. Click "Install" button**  
 Driver path registration for VR System.  
-<img src="/VirtualMotionTrackerDocument/img/screen0.png"></img>
-<img src="/VirtualMotionTrackerDocument/img/screen1B.png"></img>
+![](/VirtualMotionTrackerDocument/img/screen0.png)
+![](/VirtualMotionTrackerDocument/img/screen1B.png)
 
 **5. Restart SteamVR**  
 vmt manager will close automatically.  
@@ -35,8 +35,8 @@ vmt manager will close automatically.
 **2. Start VR HMD and Controller**  
 vmt_manager will get room info.  
 Please wait for Room Matrix turns green.   
-<img src="/VirtualMotionTrackerDocument/img/screen1.png"></img>
-<img src="/VirtualMotionTrackerDocument/img/screen2.png"></img>  
+![](/VirtualMotionTrackerDocument/img/screen1.png)
+![](/VirtualMotionTrackerDocument/img/screen2.png)  
 
 **3. Click "Set Room Matrix" button.**  
 Room Matrix will save in setting.json.  
@@ -45,27 +45,27 @@ Room Matrix will save in setting.json.
 **1. Click "Check VMT_0 Position" Button**  
 **2. if SteamVR shows tracker, and "VMT_0 Room Position" green, it's ok.**  
 if "VMT_0 Room Position" is red, please retry Room Matrix setup.  
-<img src="/VirtualMotionTrackerDocument/img/screen2A.png"></img>
-<img src="/VirtualMotionTrackerDocument/img/screen3.png"></img>  
+![](/VirtualMotionTrackerDocument/img/screen2A.png)
+![](/VirtualMotionTrackerDocument/img/screen3.png)  
 
 ## Test controller input
 Please set tracker role before you test controller input.  
-<img src="/VirtualMotionTrackerDocument/img/screen2C.png"></img>  
+![](/VirtualMotionTrackerDocument/img/screen2C.png)  
 
 ## Configure handheld mode.
 If you want to tracker works like Controller or not, please below setting.  
 **1. Click "Show all" in Manager**  
-<img src="/VirtualMotionTrackerDocument/img/screen2B.png"></img>  
+![](/VirtualMotionTrackerDocument/img/screen2B.png)  
   
 **2. SteamVRの設定→デバイス→Viveトラッカーを管理**  
-<img src="/VirtualMotionTrackerDocument/img/screen4.png" height="300px"></img>  
+![](/VirtualMotionTrackerDocument/img/screen4.png" height="300px)  
   
 **3. Viveトラッカーの管理**  
-<img src="/VirtualMotionTrackerDocument/img/screen5.png" height="300px"></img>  
+![](/VirtualMotionTrackerDocument/img/screen5.png" height="300px)  
   
 **4. Set Tracker roles**  
-<img src="/VirtualMotionTrackerDocument/img/screen6.png" height="300px"></img>
-<img src="/VirtualMotionTrackerDocument/img/screen7.png" height="300px"></img>  
+![](/VirtualMotionTrackerDocument/img/screen6.png" height="300px)
+![](/VirtualMotionTrackerDocument/img/screen7.png" height="300px)  
 
 ## OSC Protocol
 
@@ -176,7 +176,7 @@ reason(string): Reason(Human readable)
 Plese use [hecomi/uOSC](https://github.com/hecomi/uOSC)  
 Send gameobject transform to virtual tracker.  
 
-<img src="/VirtualMotionTrackerDocument/img/unity.png"></img>
+![](/VirtualMotionTrackerDocument/img/unity.png)
   
 ```cs
 using System.Collections;
