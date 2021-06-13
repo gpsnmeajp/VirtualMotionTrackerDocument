@@ -23,8 +23,8 @@ description: ダウンロードと注意
     本サイトを一通りを読んで理解できない場合は、使用されないことを勧めします。  
     Please don't use if you can not understand manual.  
 
-    明らかな不具合や異常挙動に関しては、詳細を添えてIssueを立ててください。  
-    For obvious defects or abnormal behavior, please set up an issue with details.   
+    明らかな不具合や異常挙動に関しては、詳細を添えて[Issue](https://github.com/gpsnmeajp/VirtualMotionTracker/issues)を立ててください。  
+    For obvious defects or abnormal behavior, please set up an [issue](https://github.com/gpsnmeajp/VirtualMotionTracker/issues) with details.   
 
 ## To VMT users bundled with other software / 他のソフトウェアに同梱されたVMTを使っている人へ
 !!! Warning
