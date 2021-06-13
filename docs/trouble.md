@@ -35,6 +35,12 @@ Click "Set Room Matrix".
 
 ![](/VirtualMotionTrackerDocument/image/trouble1.png)
 
+## Room matrix is red / ルーム行列が赤色
+SteamVR is not working properly, such as the base station is not turned on or the HMD cannot see the base station.   
+ベースステーションの電源が入っていない、HMDからベースステーションが見えないなど、SteamVRが正常に動いていません。
+
+![](/VirtualMotionTrackerDocument/image/troubleB.png)
+
 ## Communication failure when uninstalling / アンインストール時に通信失敗
 If you press OK, it will try to uninstall, but the success rate is higher if you delete the entire VMT folder.   
 OKを押すとアンインストールを試しますが、VMTのフォルダごと消すほうが成功率は高いです。
