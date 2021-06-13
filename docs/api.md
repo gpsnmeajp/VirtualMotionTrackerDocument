@@ -14,7 +14,7 @@ Sends the coordinates of the attached GameObject as a tracker.
   
 ![](/VirtualMotionTrackerDocument/image/unity.png)
   
-```cs
+```c#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -188,7 +188,7 @@ SteamVRには、開発中のデバイスのデバッグのため、既存のデ�
 As an example, if you add the following description to steamvr.vrsettings, you can control tracker 0 = HMD, 1 = left hand, 2 = right hand.   
 例として、steamvr.vrsettingsに以下の記述を追加すると、トラッカー0=HMD, 1=左手, 2=右手の制御ができます。  
 
-```
+```json
    "TrackingOverrides" : {
       "/devices/vmt/VMT_0" : "/user/head",
       "/devices/vmt/VMT_1" : "/user/hand/left",
@@ -210,7 +210,7 @@ To work overwrite, the target HMD and controller must be powered on and properly
 Basicaly, set false to old version compatible.  
 基本的にfalseにすることで古い挙動に戻ります(旧バージョンに対する互換性)。  
 
-```
+```json
 {
 	"HMDisIndex0": Serial number "HMD" as HMD(Index 0)/「HMD」というシリアルをIndex 0(HMD)として扱うか,
 	"OptoutTrackingRole": Optout Tracking Role when tracker,tracking reference / トラッキングロールのオプトアウトを行うか(トラッカー、トラッキングリファレンス),
