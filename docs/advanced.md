@@ -5,12 +5,13 @@ description: 応用的な使い方
 
 # Advanced / 応用的な使い方
 ## How to set the  controller bainding. / コントローラーバンディングの設定方法
-### 0. Fist / はじめに
-この作業は必要なアプリ(SteamVR Input)とそうでないアプリ(Legacy Input)があります。
-VRアプリの公式サイトに「トラッカーの役割を設定するように」と記載がある場合、この作業が必要になる可能性が高いです。
+!!! Note
+    There are some apps that need this work (Steam VR Input) and some that don't (Legacy Input).  
+    If the official website of the VR app says "Set the role of tracker", this is likely to be necessary.  
 
-There are some apps that need this work (Steam VR Input) and some that don't (Legacy Input).  
-If the official website of the VR app says "Set the role of tracker", this is likely to be necessary.  
+    この作業は必要なアプリ(SteamVR Input)とそうでないアプリ(Legacy Input)があります。
+    VRアプリの公式サイトに「トラッカーの役割を設定するように」と記載がある場合、この作業が必要になる可能性が高いです。
+
 
 ### 1. Preparation / 事前準備
 #### 1. Start SteamVR / SteamVRを起動
@@ -50,8 +51,11 @@ It will not be displayed if it is not app started.
 From "Current Controller", select the VMT for each part.   
 「現在のコントローラ」から、各部位別のVMTを選択します。
 
-(vmt_leftfoot, vmt_rightfoot, etc. If you don't see this, you may not have "Tracker Role" set or you are using something older than VMT_009. Try using the latest VMT.)   
-(vmt_leftfoot, vmt_rightfootなど。これが出ない場合は、「トラッカーの役割」が設定されていないか、VMT_009より古いものを使用している可能性があります。最新のVMTを使用してみてください。)
+!!! Note
+    vmt_leftfoot, vmt_rightfoot, etc.   
+    
+    If you don't see this, you may not have "Tracker Role" set or you are using something older than VMT_009. Try using the latest VMT.)  
+    これが出ない場合は、「トラッカーの役割」が設定されていないか、VMT_009より古いものを使用している可能性があります。最新のVMTを使用してみてください。
 
 ![](/VirtualMotionTrackerDocument/image/advB2.png)
 ![](/VirtualMotionTrackerDocument/image/advB3.png)
@@ -76,18 +80,21 @@ From "Current Controller", select the VMT for each part.
 
 #### 10. When you're done, click "Back" to save  / 終わったら「戻る」で保存されます
 #### 11. Check if the app recognizes it. / アプリで認識しているかを確認します。
-If it doesn't work, try swapping poses  
-上手く動かない場合は、poseを入れ替えてみる
+
+!!! Note
+    If it doesn't work, try swapping poses  
+    上手く動かない場合は、poseを入れ替えてみる
 
 ### If there are extra bindings you didn't want. /余分なBindingがある場合
+!!! Warning
+    Please note that if you make a mistake, all SteamVR settings will be lost.   
+    編集を誤るとSteamVRの設定がすべて消失するため注意してください。
+
 C:\Program Files (x86)\Steam\config\steamvr.vrsettings  
 から必ずバックアップを取った後、「vmt」を含む行をすべて削除してみてください。
 
 C:\Program Files (x86)\Steam\config\steamvr.vrsettings  
 Be sure to make a backup from, and then try deleting all the lines that contain "vmt".
-
-Please note that if you make a mistake, all SteamVR settings will be lost.   
-編集を誤るとSteamVRの設定がすべて消失するため注意してください。
 
 
 ## 各画面の解説
