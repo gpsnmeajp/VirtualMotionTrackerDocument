@@ -1,6 +1,6 @@
 # Download
 
-![](/VirtualMotionTrackerDocument/img/VMTlogo.png)
+![](/VirtualMotionTrackerDocument/image/VMTlogo.png)
 
 ## Notice / 注意 
 
@@ -19,13 +19,17 @@
     Please don't use if you can not understand manual.  
 
     明らかな不具合や異常挙動に関しては、詳細を添えてIssueを立ててください。  
-    コードレベル以外のIssueは返答無くCloseすることがあります。  
+    For obvious defects or abnormal behavior, please set up an issue with details.   
 
 ## To VMT users bundled with other software / 他のソフトウェアに同梱されたVMTを使っている人へ
-このソフトは、無料、無保証で、使い方がわかる開発者に向けて作成しています。  
-各ソフトウェアとの組み合わせで発生したトラブルは、各作者にサポートの依頼をしてください。  
-This software is free, non-warranty, and designed for developers who know how to use it.  
-For troubles that occur in combination with each software, ask each author for support.  
+!!! Warning
+    このソフトは、無料、無保証で、使い方がわかる開発者に向けて作成しています。  
+    各ソフトウェアとの組み合わせで発生したトラブルは、まず各作者にサポートの依頼をしてください。  
+    VMTへのサポート依頼は、各ソフトの開発者を**通して**行ってください。  
+   
+    This software is free, non-warranty, and designed for developers who know how to use it.  
+    For troubles that occur in combination with each software, ask each author for support.  
+    Please make a support request to VMT **through** the developer of each software. 
 
 
 ## [Download on github / githubでダウンロード](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)

@@ -7,13 +7,14 @@ nav:
     - Home: index.md
     - Setup: setup.md
     - Trouble: trouble.md
+    - How it works: howitworks.md
     - API: api.md
     - Download: download.md
 theme:
   name: material
   custom_dir: overrides
-  logo: img/Ready32x32.png
-  favicon: img/Ready32x32.png
+  logo: image/Ready32x32.png
+  favicon: image/Ready32x32.png
   features:
     - navigation.tabs
   palette:
