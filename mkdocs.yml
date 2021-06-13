@@ -8,6 +8,7 @@ nav:
     - How it works: howitworks.md
     - Setup: setup.md
     - Trouble: trouble.md
+    - Advanced: advanced.md
     - API: api.md
     - Download: download.md
 theme:

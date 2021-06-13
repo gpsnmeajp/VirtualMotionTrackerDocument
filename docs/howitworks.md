@@ -1,4 +1,9 @@
-# How it works
+---
+title: How it works
+description: 仕組みについて
+---
+
+# How it works / 仕組み
 ## VMT Driver 
 C++ OpenVR driver. Receives the virtual tracker attitude on OSC and transfers the attitude to SteamVR.
 It transforms coordinate. it will start up with SteamVR and exit.

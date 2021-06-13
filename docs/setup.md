@@ -1,3 +1,8 @@
+---
+title: Setup
+description: セットアップ手順
+---
+
 # Setup / セットアップ
 
 ## At First / はじめに
