@@ -29,12 +29,12 @@ description: ダウンロードと注意
 ## For developers looking to distribute VMT-dependent software  / VMTに依存したソフトウェアを配布しようと考えている開発者へ
 !!! Note
     このソフトは、無料、無保証で、使い方がわかる開発者に向けて作成しています。  
-    エンドユーザーに対するサポートは、各ソフトウェアで行ってください。  
+    エンドユーザーに対するサポートは、こちらでは行いません。
     また、VMTはバージョンごとに挙動が変わることがあります。  
     安定して提供するためには、動作確認済みのVMTをソフトウェアに同梱することを強く勧めます。  
 
     This software is free, non-warranty, and designed for developers who know how to use it.  
-    Support for end users should be provided by each software.  
+    We do not provide support for end users here. 
     Also, VMT may behave differently depending on the version.  
     It is strongly recommended to bundle the confirmed VMT in the software for stable provision.   
 
