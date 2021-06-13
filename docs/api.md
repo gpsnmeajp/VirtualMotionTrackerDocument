@@ -12,7 +12,7 @@ Sends the coordinates of the attached GameObject as a tracker.
 [hecomi/uOSC](https://github.com/hecomi/uOSC)を導入してください。  
 アタッチされたGameObjectの座標をトラッカーとして送信します。  
   
-![](/VirtualMotionTrackerDocument/img/unity.png)
+![](/VirtualMotionTrackerDocument/image/unity.png)
   
 ```cs
 using System.Collections;
