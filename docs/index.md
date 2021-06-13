@@ -14,8 +14,8 @@ OSCで姿勢(座標や回転)を受け取り、仮想的なトラッカーとし
 OpenVRのサンプルと仕様に沿った作りになっており、他のドライバのようにSteamVRのアップデートの度にクラッシュすることは起きにくい作りになっています。  
 
 # [Download / ダウンロード](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)  
-# [Manual & sample(English)](docs/note_en.md)
-# [説明書・サンプル(日本語)](docs/note.md)
+# [Manual & sample(English)](note_en.md)
+# [説明書・サンプル(日本語)](note.md)
 
 **本ソフトウェアは、自分で問題を解決できる人向け(上級者向け)です。**  
 **入れただけで何かができるツールではなく、他のアプリケーションやデバイスと組み合わせて使用します。**  
@@ -32,14 +32,14 @@ If you have trouble for VMT 005 such as not starting, use VMT 006 or after will 
 
 認識しないソフトがある場合、以下を確認してください。  
 + VMT_009以降を使用しているか
-+ [SteamVRトラッカーロールの設定](docs/howto.md)
-+ [SteamVRバインディングの割当](docs/binding.md)
++ [SteamVRトラッカーロールの設定](howto.md)
++ [SteamVRバインディングの割当](binding.md)
 + C:\Program Files (x86)\Steam\config\steamvr.vrsettings からVMT周りの設定を削除してみる(必ずバックアップを取ってください)
 
 Please check below if you meet software won't recognize VMT.  
 + Use after version of VMT_009
-+ [SteamVR Tracker Role](docs/note_en.md)
-+ [SteamVR binding (Pose)](docs/binding.md)
++ [SteamVR Tracker Role](note_en.md)
++ [SteamVR binding (Pose)](binding.md)
 + Try remove VMT setting on C:\Program Files (x86)\Steam\config\steamvr.vrsettings (You must backup before change it.)
 
 # サポートは閉鎖しました。(Support desk has been closed.)
@@ -57,9 +57,9 @@ Issues other than code level may be closed without a response.
 This software is free, non-warranty, and designed for developers who know how to use it.  
 For troubles that occur in combination with each software, ask each author for support.  
   
-<img src="https://github.com/gpsnmeajp/VirtualMotionTracker/blob/master/docs/vmt_vr.png?raw=true"></img>
-<img src="https://github.com/gpsnmeajp/VirtualMotionTracker/blob/master/docs/screen0.png?raw=true"></img>
-<img src="https://github.com/gpsnmeajp/VirtualMotionTracker/blob/master/docs/Architecture.png?raw=true"></img>
+<img src="/VirtualMotionTrackerDocument/img/vmt_vr.png?raw=true"></img>
+<img src="/VirtualMotionTrackerDocument/img/screen0.png?raw=true"></img>
+<img src="/VirtualMotionTrackerDocument/img/Architecture.png?raw=true"></img>
 
 # Licence
 MIT Licence
