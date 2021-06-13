@@ -1,6 +1,7 @@
 site_name: Virtual Motion Tracker
 site_description: The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices.
 site_url: https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/
+edit_uri: ""
 repo_url: https://github.com/gpsnmeajp/VirtualMotionTracker/
 repo_name: VirtualMotionTracker
 nav:
