@@ -5,6 +5,8 @@ description: Virtual Motion Trackerについて
 
 # VMT - Virtual Motion Tracker
 
+![](/VirtualMotionTrackerDocument/img/vmt_vr.png?raw=true)
+
 The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices.  
 Very easy, simple, and robust.  
 
@@ -56,8 +58,7 @@ Issues other than code level may be closed without a response.
 This software is free, non-warranty, and designed for developers who know how to use it.  
 For troubles that occur in combination with each software, ask each author for support.  
   
-![](/VirtualMotionTrackerDocument/img/vmt_vr.png?raw=true)
-![](/VirtualMotionTrackerDocument/img/screen0.png?raw=true)
+
 ![](/VirtualMotionTrackerDocument/img/Architecture.png?raw=true)
 
 ## Licence

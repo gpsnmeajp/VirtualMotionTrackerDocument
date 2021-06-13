@@ -1,7 +1,6 @@
 # Download
 
-## [Download](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)
-## [ダウンロード](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)
+## [Download on github / githubでダウンロード](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)
 
 !!! Notice
     本ソフトウェアは、自分で問題を解決できる人向け(上級者向け)です。  
