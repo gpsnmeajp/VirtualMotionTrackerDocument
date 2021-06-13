@@ -5,6 +5,10 @@ description: 問題と解決方法
 
 # Trouble / トラブル
 
+## Do not break the VMT files apart. / VMTのファイルはばらばらにしないでください。
+All placements within the VMT folder are important. Do not move only part of it.   
+VMTのフォルダ内の配置は全て重要です。一部だけを移動することはしないでください。
+
 ## Doesn't work with specific VR applications / 特定のVRアプリケーションで動かない
 [Advanced](advanced.md) にある設定をしてください  
 Make the settings in [Advanced](advanced.md)  
