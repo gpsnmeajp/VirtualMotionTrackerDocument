@@ -97,7 +97,7 @@ C:\Program Files (x86)\Steam\config\steamvr.vrsettings
 Be sure to make a backup from, and then try deleting all the lines that contain "vmt".
 
 
-## 各画面の解説
+## Screens / 各画面の解説
 ### Install
 Install, uninstall, version information, error information  
 インストール、アンインストール、バージョン情報、エラー情報
@@ -127,3 +127,30 @@ Serial number of the tool to recognize
 Edit configuration file  
 設定ファイルの編集  
 ![](/VirtualMotionTrackerDocument/image/adv6.png)
+
+
+## Uninstall / アンインストール
+!!! Danger
+    This is a reference procedure. if you do this, VMT will not be available until you reinstall it.   
+    参考の手順です。当然ですが、これを実施するとVMTは再度インストールするまで使用できなくなります。  
+
+Click "Uninstall" button. 
+Uninstallボタンをクリックします。  
+
+![](/VirtualMotionTrackerDocument/image/uninstall1.png)
+
+Click "OK" button.  
+OKボタンをクリックします。  
+
+![](/VirtualMotionTrackerDocument/image/uninstall2.png)
+
+Click "Yes" button.(If you want to reinstall immediately, you can click No.)  
+Yesボタンをクリックします。(すぐにインストールし直す場合はNoをクリックしても良いです。)  
+
+![](/VirtualMotionTrackerDocument/image/uninstall3.png)
+
+Click "OK" button.  
+OKボタンをクリックします。  
+
+![](/VirtualMotionTrackerDocument/image/uninstall4.png)
+
