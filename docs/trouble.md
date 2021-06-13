@@ -16,13 +16,13 @@ If you have not installed it, please install it.
 If it doesn't work after many attempts, check the following and fix it.  
 
 + Is it blocked by a firewall? → unblock
-+ Is it placed in a folder path that includes Japanese? → move not included path
++ Is it placed in a folder path that includes Space, Japanese, Chinese, or other non-ASCII? → move not included path
 + Is it placed in Program files?  → move other path
 
 何度試してもだめな場合は、以下を確認し、修正してください。  
 
 + ファイアーウォールで妨害されていないか → 解除してください
-+ 日本語を含むフォルダパスに置いていないか → 含まない場所においてください
++ 日本語、中国語、その他ASCII外文字や空白を含むフォルダパスに置いていないか → 含まない場所においてください
 + Program filesに置いていないか → 別の場所に移動してください
   
 ![](/VirtualMotionTrackerDocument/image/trouble2.png)
