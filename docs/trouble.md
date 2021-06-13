@@ -41,6 +41,16 @@ SteamVR is not working properly, such as the base station is not turned on or th
 
 ![](/VirtualMotionTrackerDocument/image/troubleB.png)
 
+## Room matrix is defferent / ルーム変換行列が違う
+After pressing "Check VMT_0 Position" Button, if the "VMT_0 Room Position" turns red even though you haven't run any applications, the room transformation matrix may have changed.
+Occurs when the room scale is set again. Press the "Set Room Matrix" button again. 
+
+Check VMT_0 Positionを押した後、特にアプリケーションを動かしていないのにVMT_0 Room Position が赤色になる場合、ルーム変換行列が変わっている可能性があります。
+ルームスケールの設定をやり直した場合などに発生します。再度、"Set RoomMatrix"ボタンを押してください。
+
+![](/VirtualMotionTrackerDocument/image/troubleC.png)
+
+
 ## Communication failure when uninstalling / アンインストール時に通信失敗
 If you press OK, it will try to uninstall, but the success rate is higher if you delete the entire VMT folder.   
 OKを押すとアンインストールを試しますが、VMTのフォルダごと消すほうが成功率は高いです。
