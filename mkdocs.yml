@@ -5,10 +5,10 @@ repo_url: https://github.com/gpsnmeajp/VirtualMotionTracker/
 repo_name: VirtualMotionTracker
 nav:
     - Home: index.md
-    - Download: download.md
     - Setup: setup.md
     - Trouble: trouble.md
     - API: api.md
+    - Download: download.md
 theme:
   name: material
   custom_dir: overrides
