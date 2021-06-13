@@ -110,7 +110,7 @@ Unityと同じ左手系、かつ、指定デバイス位置(回転はルーム�
 OpenVR Driver Right-handed space, and Traget device position(Room Rotation).  
 OpenVRの右手系、かつ、指定デバイス空間(回転はルーム空間)  
   
-### 入力操作
+### Input / 入力操作
 |種類|範囲|
 |---|---|
 |ButtonIndex(int)| 0～7|
@@ -132,7 +132,7 @@ Joystick input.
 ジョイスティック入力  
 x,y(float):-1.0 ～ 1.0  
   
-### ドライバ操作
+### Driver control / ドライバ操作
 **/VMT/Reset**  
 Turn off all tracker.
 すべてのトラッカーを電源オフにする  
@@ -155,7 +155,7 @@ RoomToDriver空間変換行列を一時的に設定します。
 Set Pose auto update. 姿勢の自動更新をオンにします。
 enable 1=on, 0=off  
 
-### ドライバ側応答
+### Driver response /ドライバ側応答
 **/VMT/Out/Log stat,msg**  
 stat(int): Dialog message type / ダイアログメッセージ種別 (0=info,1=warn,2=err)  
 msg(string): Message メッセージ  
@@ -173,7 +173,7 @@ duration(float): duration / 長さ
 code(int): Unavailable code / 利用不可コード(0=Available/利用可能, 1=Room Matrix has not been set./ルーム行列が設定されていない)  
 reason(string): Reason(Human readable) / 詳細(人間が読む用)  
   
-## コマンドライン引数
+## Command line / コマンドライン引数
 |例|機能|
 |---|---|
 |vmt_manager.exe install| Install driver / ドライバをインストールします|
