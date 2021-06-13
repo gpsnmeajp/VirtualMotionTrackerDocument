@@ -1,0 +1,25 @@
+site_name: Virtual Motion Tracker Document
+site_url: https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/
+repo_url: https://github.com/gpsnmeajp/VirtualMotionTracker/
+repo_name: VirtualMotionTracker
+nav:
+    - Home: index.md
+theme:
+  name: material
+  logo: img/Ready32x32.png
+  favicon: img/Ready32x32.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+  palette:
+    - scheme: default
+      primary: black
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
