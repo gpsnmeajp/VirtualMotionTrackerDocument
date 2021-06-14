@@ -18,3 +18,11 @@ However, from now on, by using VMT, it will be possible to do it in a simple way
 自作デバイス、自作のソフトウェアで、簡単に使える OpenVR 仮想トラッカードライバです。OSCで姿勢(座標や回転)を受け取り、仮想的なトラッカーとしてSteamVR上で利用することができます。  
 
 これまで、独自のOpenVRトラッキングデバイスを作成するということは難しい作業であり、高度な技術的作業が必要でした。しかし、これからはVMTを用いることで、UnityでGameObjectにアタッチするような簡単な方法で行うことができるようになります。  
+
+## Menu
+- [How it works](howitworks.md)
+- [Setup](setup.md)
+- [Trouble](trouble.md)
+- [Advanced](advanced.md)
+- [API](api.md)
+- [Download](download.md)
