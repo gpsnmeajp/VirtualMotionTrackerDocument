@@ -56,6 +56,9 @@ public class sendme : MonoBehaviour
 ```
 
 ### Advanced sample / 応用的なサンプル
+Some applications require SteamVR settings to recognize full body tracking.  
+一部のアプリケーションは、フルボディトラッキングを認識させるためにSteamVRの設定が必要です。  
+-> Setting: [Advanced](advanced.md)  
 
 ```c#
 using System.Collections;
