@@ -5,19 +5,23 @@ description: 技術的な使い方・プロトコル
 
 # API
 
-## Unity sample / Unity sample
+## Unity sample
 Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).  
-Sends the coordinates of the attached GameObject as a tracker. 
-
 [hecomi/uOSC](https://github.com/hecomi/uOSC)を導入してください。  
+
+### Basic sample / 基本的なサンプル
+Sends the coordinates of the attached GameObject as a tracker.   
 アタッチされたGameObjectの座標をトラッカーとして送信します。  
   
 ![](/VirtualMotionTrackerDocument/image/unity.png)
+
   
 ```c#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(uOSC.uOscClient))]
 public class sendme : MonoBehaviour
 {
     const int DISABLE = 0;
@@ -38,6 +42,91 @@ public class sendme : MonoBehaviour
         const int enable = ENABLE_TRACKER;
         const float timeoffset = 0f;
 
+        client.Send("/VMT/Room/Unity", (int)index, (int)enable, (float)timeoffset,
+            (float)transform.position.x,
+            (float)transform.position.y,
+            (float)transform.position.z,
+            (float)transform.rotation.x,
+            (float)transform.rotation.y,
+            (float)transform.rotation.z,
+            (float)transform.rotation.w
+        );
+    }
+}
+```
+
+### Advanced sample / 応用的なサンプル
+
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(uOSC.uOscClient))]
+public class sendit : MonoBehaviour
+{
+    public Transform head;
+    public Transform leftHand;
+    public Transform rightHand;
+    public Transform waist;
+    public Transform leftFoot;
+    public Transform rightFoot;
+
+    public Transform zeroReference;
+
+    const int DISABLE = 0;
+    const int ENABLE_TRACKER = 1;
+    const int ENABLE_CONTROLLER_L = 2;
+    const int ENABLE_CONTROLLER_R = 3;
+    const int ENABLE_TRACKING_REFERENCE = 4;
+
+    uOSC.uOscClient client;
+    void Start()
+    {
+        client = GetComponent<uOSC.uOscClient>();
+    }
+
+    void Update()
+    {
+        SendJointUnity(0, ENABLE_TRACKER,       head,       "VMT_10");
+        SendJointUnity(1, ENABLE_CONTROLLER_L,  leftHand,   "VMT_10");
+        SendJointUnity(2, ENABLE_CONTROLLER_R,  rightHand,  "VMT_10");
+        SendJointUnity(3, ENABLE_TRACKER,       waist,      "VMT_10");
+        SendJointUnity(4, ENABLE_TRACKER,       leftFoot,   "VMT_10");
+        SendJointUnity(5, ENABLE_TRACKER,       rightFoot,  "VMT_10");
+
+        //VMT_10 = ゼロ点。これを回転させたり、移動させると他にオフセットが効きます。
+        //This is zero point. affect others offset, If you rotate or move it.
+        SendRoomUnity(10, ENABLE_TRACKING_REFERENCE, zeroReference); 
+    }
+
+    void SendJointUnity(int index, int enable, Transform transform, string serial)
+    {
+        if (transform == null) {
+            return;
+        }
+
+        const float timeoffset = 0f;
+        client.Send("/VMT/Joint/Unity", (int)index, (int)enable, (float)timeoffset,
+            (float)transform.position.x,
+            (float)transform.position.y,
+            (float)transform.position.z,
+            (float)transform.rotation.x,
+            (float)transform.rotation.y,
+            (float)transform.rotation.z,
+            (float)transform.rotation.w,
+            (string)serial
+        );
+    }
+
+    void SendRoomUnity(int index, int enable, Transform transform)
+    {
+        if (transform == null)
+        {
+            return;
+        }
+
+        const float timeoffset = 0f;
         client.Send("/VMT/Room/Unity", (int)index, (int)enable, (float)timeoffset,
             (float)transform.position.x,
             (float)transform.position.y,
