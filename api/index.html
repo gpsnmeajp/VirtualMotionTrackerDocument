@@ -1,0 +1,1248 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技術的な使い方・プロトコル">
+      
+      
+      
+      
+        <link rel="canonical" href="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/api/">
+      
+      <link rel="icon" href="../image/Ready32x32.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>API - Virtual Motion Tracker</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  
+  
+    
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Virtual Motion Tracker - API" />
+  <meta property="og:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta property="og:url" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/api/" />
+  <meta property="og:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virtual Motion Tracker - API" />
+  <meta name="twitter:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta name="twitter:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta name="google-site-verification" content="d5IN1nIVy3RY8j8YuhOxvh1VRjzUw6xY00KYjCGKZAI" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtual Motion Tracker" class="md-header__button md-logo" aria-label="Virtual Motion Tracker" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtual Motion Tracker
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../howitworks/" class="md-tabs__link">
+      How it works
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup/" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../trouble/" class="md-tabs__link">
+      Trouble
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../advanced/" class="md-tabs__link">
+      Advanced
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../download/" class="md-tabs__link">
+      Download
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtual Motion Tracker" class="md-nav__button md-logo" aria-label="Virtual Motion Tracker" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    Virtual Motion Tracker
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitworks/" class="md-nav__link">
+        How it works
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trouble/" class="md-nav__link">
+        Trouble
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unity-sample" class="md-nav__link">
+    Unity sample
+  </a>
+  
+    <nav class="md-nav" aria-label="Unity sample">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-sample" class="md-nav__link">
+    Basic sample / 基本的なサンプル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-sample" class="md-nav__link">
+    Advanced sample / 応用的なサンプル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osc-protocol-osc" class="md-nav__link">
+    OSC Protocol / OSCプロトコル
+  </a>
+  
+    <nav class="md-nav" aria-label="OSC Protocol / OSCプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-tracker" class="md-nav__link">
+    Controle virtual tracker / 仮想トラッカー制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input / 入力操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-control" class="md-nav__link">
+    Driver control / ドライバ操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-response" class="md-nav__link">
+    Driver response /ドライバ側応答
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    Command line / コマンドライン引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-override" class="md-nav__link">
+    Tracking Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingjson" class="md-nav__link">
+    setting.json
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unity-sample" class="md-nav__link">
+    Unity sample
+  </a>
+  
+    <nav class="md-nav" aria-label="Unity sample">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-sample" class="md-nav__link">
+    Basic sample / 基本的なサンプル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-sample" class="md-nav__link">
+    Advanced sample / 応用的なサンプル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osc-protocol-osc" class="md-nav__link">
+    OSC Protocol / OSCプロトコル
+  </a>
+  
+    <nav class="md-nav" aria-label="OSC Protocol / OSCプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-tracker" class="md-nav__link">
+    Controle virtual tracker / 仮想トラッカー制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input / 入力操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-control" class="md-nav__link">
+    Driver control / ドライバ操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-response" class="md-nav__link">
+    Driver response /ドライバ側応答
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    Command line / コマンドライン引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-override" class="md-nav__link">
+    Tracking Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingjson" class="md-nav__link">
+    setting.json
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">⚓︎</a></h1>
+<h2 id="unity-sample">Unity sample<a class="headerlink" href="#unity-sample" title="Permanent link">⚓︎</a></h2>
+<p>Please install asset <a href="https://github.com/hecomi/uOSC">hecomi/uOSC</a>.<br />
+<a href="https://github.com/hecomi/uOSC">hecomi/uOSC</a>を導入してください。  </p>
+<h3 id="basic-sample">Basic sample / 基本的なサンプル<a class="headerlink" href="#basic-sample" title="Permanent link">⚓︎</a></h3>
+<p>Sends the coordinates of the attached GameObject as a tracker. <br />
+アタッチされたGameObjectの座標をトラッカーとして送信します。  </p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/unity.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="na">[RequireComponent(typeof(uOSC.uOscClient))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">sendme</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">DISABLE</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_TRACKER</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_CONTROLLER_L</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_CONTROLLER_R</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_TRACKING_REFERENCE</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+
+    <span class="n">uOSC</span><span class="p">.</span><span class="n">uOscClient</span> <span class="n">client</span><span class="p">;</span>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">client</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">uOSC</span><span class="p">.</span><span class="n">uOscClient</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">int</span> <span class="n">enable</span> <span class="p">=</span> <span class="n">ENABLE_TRACKER</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">timeoffset</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+
+        <span class="n">client</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">&quot;/VMT/Room/Unity&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">enable</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">timeoffset</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">w</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="advanced-sample">Advanced sample / 応用的なサンプル<a class="headerlink" href="#advanced-sample" title="Permanent link">⚓︎</a></h3>
+<p>Some applications require SteamVR settings to recognize full body tracking.<br />
+一部のアプリケーションは、フルボディトラッキングを認識させるためにSteamVRの設定が必要です。<br />
+-&gt; Setting: <a href="../advanced/">Advanced</a>  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="na">[RequireComponent(typeof(uOSC.uOscClient))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">sendit</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">leftHand</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">rightHand</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">waist</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">leftFoot</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">rightFoot</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">zeroReference</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">DISABLE</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_TRACKER</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_CONTROLLER_L</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_CONTROLLER_R</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ENABLE_TRACKING_REFERENCE</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+
+    <span class="n">uOSC</span><span class="p">.</span><span class="n">uOscClient</span> <span class="n">client</span><span class="p">;</span>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">client</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">uOSC</span><span class="p">.</span><span class="n">uOscClient</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">ENABLE_TRACKER</span><span class="p">,</span>       <span class="n">head</span><span class="p">,</span>       <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">ENABLE_CONTROLLER_L</span><span class="p">,</span>  <span class="n">leftHand</span><span class="p">,</span>   <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="n">ENABLE_CONTROLLER_R</span><span class="p">,</span>  <span class="n">rightHand</span><span class="p">,</span>  <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="n">ENABLE_TRACKER</span><span class="p">,</span>       <span class="n">waist</span><span class="p">,</span>      <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="n">ENABLE_TRACKER</span><span class="p">,</span>       <span class="n">leftFoot</span><span class="p">,</span>   <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+        <span class="n">SendJointUnity</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="n">ENABLE_TRACKER</span><span class="p">,</span>       <span class="n">rightFoot</span><span class="p">,</span>  <span class="s">&quot;VMT_10&quot;</span><span class="p">);</span>
+
+        <span class="c1">//VMT_10 = ゼロ点。これを回転させたり、移動させると他にオフセットが効きます。</span>
+        <span class="c1">//This is zero point. affect others offset, If you rotate or move it.</span>
+        <span class="n">SendRoomUnity</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="n">ENABLE_TRACKING_REFERENCE</span><span class="p">,</span> <span class="n">zeroReference</span><span class="p">);</span> 
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">SendJointUnity</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">enable</span><span class="p">,</span> <span class="n">Transform</span> <span class="n">transform</span><span class="p">,</span> <span class="kt">string</span> <span class="n">serial</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">transform</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">timeoffset</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+        <span class="n">client</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">&quot;/VMT/Joint/Unity&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">enable</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">timeoffset</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">w</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">serial</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">SendRoomUnity</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">enable</span><span class="p">,</span> <span class="n">Transform</span> <span class="n">transform</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">transform</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">timeoffset</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+        <span class="n">client</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">&quot;/VMT/Room/Unity&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">enable</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">timeoffset</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">.</span><span class="n">w</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="osc-protocol-osc">OSC Protocol / OSCプロトコル<a class="headerlink" href="#osc-protocol-osc" title="Permanent link">⚓︎</a></h2>
+<table>
+<thead>
+<tr>
+<th>Direction / 方向</th>
+<th>Port / ポート番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App → Driver</td>
+<td>39570</td>
+</tr>
+<tr>
+<td>Manager → Driver</td>
+<td>39570</td>
+</tr>
+<tr>
+<td>Manager ← Driver</td>
+<td>39571</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Note: Manager will not work if port 39571 is used. 
+注意: 39571が使用されているとManagerは動作しません。  </p>
+</div>
+<h3 id="controle-virtual-tracker">Controle virtual tracker / 仮想トラッカー制御<a class="headerlink" href="#controle-virtual-tracker" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>Identifier / 識別子</th>
+<th>Type / 型</th>
+<th>Detail / 内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>int</td>
+<td>Index(0～57). インデックス(0～57)</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>int</td>
+<td>Enable / 有効可否。0=Disable/無効, 1=Tracker/トラッカー, 2=Left Controller/左コントローラ, 3=Right Controller/右コントローラ, 4=TrackingReference</td>
+</tr>
+<tr>
+<td>timeoffset</td>
+<td>float</td>
+<td>Timeoffset/補正時間。Always 0/基本的に0です</td>
+</tr>
+<tr>
+<td>x,y,z</td>
+<td>float</td>
+<td>Position/位置座標</td>
+</tr>
+<tr>
+<td>qx,qy,qz,qw</td>
+<td>float</td>
+<td>Rotation(Quaternion)/回転(クォータニオン)</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>string</td>
+<td>Joint, Follow target device serial / 追従対象のデバイスシリアル(LHR-xxxxxxx) or HMD(HMD)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).
+種別(トラッカー or コントローラ)はデバイス登録時(SteamVR起動時からの初回のみ)反映されます。  </p>
+</div>
+<p><strong>/VMT/Room/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw</strong><br />
+Unity lik Left-handed space, and Room space. (Recommended)<br />
+Unityと同じ左手系、かつ、ルーム空間(推奨)  </p>
+<p><strong>/VMT/Room/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw</strong> <br />
+OpenVR Driver Right-handed space, and Room space.<br />
+OpenVR Driverの右手系、かつ、ルーム空間  </p>
+<p><strong>/VMT/Raw/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw</strong><br />
+Unity lik Left-handed space, and Driver space.<br />
+Unityと同じ左手系、かつ、ドライバー空間  </p>
+<p><strong>/VMT/Raw/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw</strong><br />
+OpenVR Driver Right-handed space, and Driver space.<br />
+OpenVRの右手系、かつ、ドライバー空間  </p>
+<p><strong>/VMT/Joint/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial</strong><br />
+Unity lik Left-handed space, and Traget device space(Traget device rotation).<br />
+Unityと同じ左手系、かつ、指定デバイス空間(回転はデバイス基準)  </p>
+<p><strong>/VMT/Joint/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial</strong><br />
+OpenVR Driver Right-handed space, and Traget device space(Traget device rotation).<br />
+OpenVRの右手系、かつ、指定デバイス空間(回転はデバイス基準)  </p>
+<p><strong>/VMT/Follow/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial</strong><br />
+Unity lik Left-handed space, and Traget device position(Room Rotation).<br />
+Unityと同じ左手系、かつ、指定デバイス位置(回転はルーム空間)  </p>
+<p><strong>/VMT/Follow/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial</strong><br />
+OpenVR Driver Right-handed space, and Traget device position(Room Rotation).<br />
+OpenVRの右手系、かつ、指定デバイス空間(回転はルーム空間)  </p>
+<h3 id="input">Input / 入力操作<a class="headerlink" href="#input" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>範囲</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ButtonIndex(int)</td>
+<td>0～7</td>
+</tr>
+<tr>
+<td>TriggerIndex(int)</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>JoyStickIndex(int)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>/VMT/Input/Button index, buttonindex, timeoffset, value</strong><br />
+Button input.
+ボタン入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Trigger index, triggerindex, timeoffset, value</strong><br />
+Trigger input.
+トリガー入力<br />
+value(float):0.0 ～ 1.0  </p>
+<p><strong>/VMT/Input/Joystick index, joystickindex, timeoffset, x, y</strong><br />
+Joystick input.
+ジョイスティック入力<br />
+x,y(float):-1.0 ～ 1.0  </p>
+<h3 id="driver-control">Driver control / ドライバ操作<a class="headerlink" href="#driver-control" title="Permanent link">⚓︎</a></h3>
+<p><strong>/VMT/Reset</strong><br />
+Turn off all tracker.
+すべてのトラッカーを電源オフにする  </p>
+<p><strong>/VMT/LoadSetting</strong><br />
+Reload driver setting json.
+ドライバーのjson設定を再読込します。  </p>
+<p><strong>/VMT/SetRoomMatrix m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12</strong><br />
+Set and Save Room Matrix. Please do not send periodic. it writes setting on drive.  <br />
+RoomToDriver空間変換行列を設定し保存します。<br />
+定期的に送信しないでください。これはディスクへの書き込みを行います。</p>
+<p><strong>/VMT/SetRoomMatrix/Temporary m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12</strong><br />
+Set Room Matrix temporary. It is volatile on restart.  <br />
+RoomToDriver空間変換行列を一時的に設定します。<br />
+こちらは一時的に適用され、再起動すると揮発します。  </p>
+<p><strong>/VMT/SetAutoPoseUpdate enable</strong><br />
+Set Pose auto update. 姿勢の自動更新をオンにします。
+enable 1=on, 0=off  </p>
+<h3 id="driver-response">Driver response /ドライバ側応答<a class="headerlink" href="#driver-response" title="Permanent link">⚓︎</a></h3>
+<p><strong>/VMT/Out/Log stat,msg</strong><br />
+stat(int): Dialog message type / ダイアログメッセージ種別 (0=info,1=warn,2=err)<br />
+msg(string): Message メッセージ  </p>
+<p><strong>/VMT/Out/Alive version, installpath</strong><br />
+version(string): Driver version / ドライババージョン<br />
+installpath(string): Driver install path / ドライバのインストールパス  </p>
+<p><strong>/VMT/Out/Haptic index, frequency, amplitude, duration</strong><br />
+frequency(float): frequency / 周波数<br />
+amplitude(float): amplitude / 振幅<br />
+duration(float): duration / 長さ  </p>
+<p><strong>/VMT/Out/Unavailable code, reason</strong><br />
+code(int): Unavailable code / 利用不可コード(0=Available/利用可能, 1=Room Matrix has not been set./ルーム行列が設定されていない)<br />
+reason(string): Reason(Human readable) / 詳細(人間が読む用)  </p>
+<h2 id="command-line">Command line / コマンドライン引数<a class="headerlink" href="#command-line" title="Permanent link">⚓︎</a></h2>
+<table>
+<thead>
+<tr>
+<th>例</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vmt_manager.exe install</td>
+<td>Install driver / ドライバをインストールします</td>
+</tr>
+<tr>
+<td>vmt_manager.exe uninstall</td>
+<td>Uninstall driver / ドライバをアンインストールします</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tracking-override">Tracking Override<a class="headerlink" href="#tracking-override" title="Permanent link">⚓︎</a></h2>
+<p>SteamVR has the ability to overwrite the orientation of an existing device with the specified device orientation for debugging the device under development. <br />
+SteamVRには、開発中のデバイスのデバッグのため、既存のデバイスの姿勢を指定したデバイスの姿勢で上書きする機能があります。  </p>
+<p><a href="https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides">https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides</a></p>
+<p>As an example, if you add the following description to steamvr.vrsettings, you can control tracker 0 = HMD, 1 = left hand, 2 = right hand. <br />
+例として、steamvr.vrsettingsに以下の記述を追加すると、トラッカー0=HMD, 1=左手, 2=右手の制御ができます。  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>   <span class="nt">&quot;TrackingOverrides&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;/devices/vmt/VMT_0&quot;</span> <span class="p">:</span> <span class="s2">&quot;/user/head&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;/devices/vmt/VMT_1&quot;</span> <span class="p">:</span> <span class="s2">&quot;/user/hand/left&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;/devices/vmt/VMT_2&quot;</span> <span class="p">:</span> <span class="s2">&quot;/user/hand/right&quot;</span>
+   <span class="p">},</span>
+</code></pre></div>
+</td></tr></table>
+<p>Buttons and sticks cannot be operated from the virtual tracker.
+The operation from controller of original is accepted.
+ボタンやスティックの操作は仮想トラッカーからはできません。<br />
+コントローラ本体の操作が受け付けられます。  </p>
+<p>Disabling the virtual tracker release the overwrite.<br />
+To work overwrite, the target HMD and controller must be powered on and properly tracked. <br />
+仮想トラッカーを無効にすると、上書きは解除されます。<br />
+上書きを機能させるには、対象のHMDとコントローラの電源が入っており、正常にトラッキングされている状態にする必要があります。  </p>
+<h2 id="settingjson">setting.json<a class="headerlink" href="#settingjson" title="Permanent link">⚓︎</a></h2>
+<p>Basicaly, set false to old version compatible.<br />
+基本的にfalseにすることで古い挙動に戻ります(旧バージョンに対する互換性)。  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;HMDisIndex0&quot;</span><span class="p">:</span> <span class="err">Serial</span> <span class="kc">nu</span><span class="err">mber</span> <span class="s2">&quot;HMD&quot;</span> <span class="err">as</span> <span class="err">HMD(I</span><span class="kc">n</span><span class="err">dex</span> <span class="mi">0</span><span class="err">)/「HMD」というシリアルをI</span><span class="kc">n</span><span class="err">dex</span> <span class="mi">0</span><span class="err">(HMD)として扱うか</span><span class="p">,</span>
+    <span class="nt">&quot;OptoutTrackingRole&quot;</span><span class="p">:</span> <span class="err">Op</span><span class="kc">t</span><span class="err">ou</span><span class="kc">t</span> <span class="err">Tracki</span><span class="kc">n</span><span class="err">g</span> <span class="err">Role</span> <span class="err">whe</span><span class="kc">n</span> <span class="kc">tra</span><span class="err">cker</span><span class="p">,</span><span class="kc">tra</span><span class="err">cki</span><span class="kc">n</span><span class="err">g</span> <span class="err">re</span><span class="kc">feren</span><span class="err">ce</span> <span class="err">/</span> <span class="err">トラッキングロールのオプトアウトを行うか(トラッカー、トラッキングリファレンス)</span><span class="p">,</span>
+    <span class="nt">&quot;ReceivePort&quot;</span><span class="p">:</span> <span class="err">OSC</span> <span class="err">Receive</span> <span class="err">por</span><span class="kc">t</span> <span class="err">/</span> <span class="err">受信ポート</span><span class="p">,</span>
+    <span class="nt">&quot;RejectWhenCannotTracking&quot;</span><span class="p">:</span> <span class="err">S</span><span class="kc">t</span><span class="err">op</span> <span class="err">whe</span><span class="kc">n</span> <span class="kc">tra</span><span class="err">cki</span><span class="kc">n</span><span class="err">g</span> <span class="err">los</span><span class="kc">t</span> <span class="err">/</span> <span class="err">異常時にトラッキングを停止するか</span><span class="p">,</span>
+    <span class="nt">&quot;RoomMatrix&quot;</span><span class="p">:</span> <span class="err">Room</span> <span class="err">Ma</span><span class="kc">tr</span><span class="err">ix</span> <span class="err">/</span> <span class="err">ルーム行列</span><span class="p">,</span>
+    <span class="nt">&quot;SendPort&quot;</span><span class="p">:</span> <span class="err">OSC</span> <span class="err">Se</span><span class="kc">n</span><span class="err">d</span> <span class="err">por</span><span class="kc">t</span> <span class="err">/</span> <span class="err">送信ポート</span><span class="p">,</span>
+    <span class="nt">&quot;VelocityEnable&quot;</span><span class="p">:</span> <span class="err">Veloci</span><span class="kc">t</span><span class="err">y</span><span class="p">,</span> <span class="err">a</span><span class="kc">n</span><span class="err">gular</span> <span class="err">veloci</span><span class="kc">t</span><span class="err">y</span> <span class="err">emura</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">e</span><span class="kc">na</span><span class="err">ble</span> <span class="err">/</span> <span class="err">速度・角速度エミュレーション</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../advanced/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Advanced
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../download/" class="md-footer__link md-footer__link--next" aria-label="Next: Download" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Download
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
