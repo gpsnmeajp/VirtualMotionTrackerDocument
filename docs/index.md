@@ -19,6 +19,9 @@ However, from now on, by using VMT, it will be possible to do it in a simple way
 
 これまで、独自のOpenVRトラッキングデバイスを作成するということは難しい作業であり、高度な技術的作業が必要でした。しかし、これからはVMTを用いることで、UnityでGameObjectにアタッチするような簡単な方法で行うことができるようになります。  
 
+**This is not supported VMC Protocol ! It different use ! **  
+**VMC Protocolは使えません！別物です！**  
+
 ## Menu
 - [How it works](howitworks.md)
 - [Setup](setup.md)
