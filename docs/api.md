@@ -70,7 +70,7 @@ public class sendme : MonoBehaviour
 |Manager ← Driver| 39571|
 
 !!! Caution
-    Note: Manager will not work if port 39571 is used. 
+    Note: Manager will not work if port 39571 is used.   
     注意: 39571が使用されているとManagerは動作しません。  
   
 ### Controle virtual tracker / 仮想トラッカー制御
@@ -96,7 +96,7 @@ public class sendme : MonoBehaviour
 |6|Right Controller (Index compatible mode) / 右コントローラ(Index互換モード)|
 
 !!! Note
-    TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).
+    TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).  
     種別(トラッカー or コントローラ)はデバイス登録時(SteamVR起動時からの初回のみ)反映されます。  
 
 **/VMT/Room/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw**  
