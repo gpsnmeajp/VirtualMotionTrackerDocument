@@ -4,6 +4,7 @@ description: 技術的な使い方・プロトコル
 ---
 
 # API
+[SteamVRで自作のデバイスやソフトを簡単にトラッカーとして認識させる方法(バーチャルモーショントラッカー)](https://qiita.com/gpsnmeajp/items/29adc31f30e531fe8023)
 
 ## Unity sample
 Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).  
@@ -60,6 +61,7 @@ public class sendme : MonoBehaviour
     }
 }
 ```
+
 
 ## OSC Protocol / OSCプロトコル
 
