@@ -103,7 +103,7 @@ public class sendme : MonoBehaviour
 Unity lik Left-handed space, Quaternion, and Room space. (Recommended)  
 Unityと同じ左手系かつ、クォータニオンかつ、ルーム空間(推奨)  
 
-**/VMT/Room/Unity index, enable, timeoffset, x, y, z, rx, ry, rz**  
+**/VMT/Room/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz**  
 Unity lik Left-handed space, Euler angles, and Room space.  
 Unityと同じ左手系かつ、オイラー角かつ、ルーム空間(推奨)  
 
@@ -116,7 +116,7 @@ OpenVR Driverの右手系かつ、クォータニオンかつ、ルーム空間
 Unity lik Left-handed space, Quaternion, and Driver space.  
 Unityと同じ左手系かつ、クォータニオンかつ、ドライバー空間  
   
-**/VMT/Raw/Unity index, enable, timeoffset, x, y, z, rx, ry, rz**  
+**/VMT/Raw/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz**  
 Unity lik Left-handed space, Euler angles, and Driver space.  
 Unityと同じ左手系かつ、オイラー角かつ、ドライバー空間  
   
@@ -129,7 +129,7 @@ OpenVRの右手系かつ、クォータニオンかつ、ドライバー空間
 Unity lik Left-handed space, Quaternion, and Traget device space(Traget device rotation).  
 Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス空間(回転はデバイス基準)  
   
-**/VMT/Joint/Unity index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
+**/VMT/Joint/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
 Unity lik Left-handed space, Euler angles, and Traget device space(Traget device rotation).  
 Unityと同じ左手系かつ、オイラー角かつ、指定デバイス空間(回転はデバイス基準)  
   
@@ -142,7 +142,7 @@ OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空�
 Unity lik Left-handed space, Quaternion, and Traget device position(Room Rotation).  
 Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス位置(回転はルーム空間)  
   
-**/VMT/Follow/Unity index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
+**/VMT/Follow/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
 Unity lik Left-handed space, Euler angles, and Traget device position(Room Rotation).  
 Unityと同じ左手系かつ、オイラー角かつ、指定デバイス位置(回転はルーム空間)  
   
@@ -178,6 +178,7 @@ See
 |Middle|3|
 |Ring|4|
 |Pinky (Little)|5|
+
 
 |Bone index / ボーンのインデックス|Detail / 内容|
 |---|---|
@@ -224,19 +225,27 @@ See
 
 **/VMT/Skeleton/Scolar index, boneSetIndex, value, 0, 0**  
 Bone set unit, and Linear space. (Strongly Recommended)  
+Simple reproduction by hand opening degree value.  
 ボーンセット単位、直線空間(強く推奨)  
+手の開き具合値による簡易再現
 
 **/VMT/Skeleton/Unity index, boneIndex, x, y, z, qx, qy, qz, qw**  
 Per one bone, Unity lik Left-handed space, Quaternion, and Hand space. (Recommended)  
-ボーン1本単位、Unityと同じ左手系かつ、クォータニオンかつ、手空間
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
+ボーン1本単位、Unityと同じ左手系かつ、クォータニオンかつ、手空間  
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
-**/VMT/Skeleton/Unity index, boneIndex, x, y, z, rx, ry, rz**  
+**/VMT/Skeleton/UEuler index, boneIndex, x, y, z, rx, ry, rz**  
 Per one bone, Unity lik Left-handed space, Euler angles, and Hand space.  
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
 ボーン1本単位、Unityと同じ左手系かつ、オイラー角かつ、手空間  
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
 **/VMT/Skeleton/Driver index, boneIndex, x, y, z, qx, qy, qz, qw**   
 Per one bone, OpenVR Driver Right-handed space, Quaternion, and Hand space.  
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
 ボーン1本単位、OpenVR Driverの右手系かつ、クォータニオンかつ、手空間  
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
 **/VMT/Skeleton/Apply index, timeoffset**  
 Reflect registered bone information. (Required)  
@@ -250,6 +259,7 @@ Reflect registered bone information. (Required)
 |TriggerIndex(int)| 0-8|
 |JoyStickIndex(int)| 0-3|
 |timeoffset|float| Timeoffset / 補正時間。Always 0 / 基本的に0です|
+
 
 |Index Compatible|Button and Axis|
 |---|---|
@@ -309,6 +319,7 @@ Joystick click input.
 value(int):1=press, 0=Release  
   
 ### Driver control / ドライバ操作
+
 |種類|範囲|
 |---|---|
 |ButtonIndex(int)| 0～17|
