@@ -29,3 +29,4 @@ However, from now on, by using VMT, it will be possible to do it in a simple way
 - [Advanced](advanced.md)
 - [API](api.md)
 - [Download](download.md)
+- [Report](report.md)
