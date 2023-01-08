@@ -12,6 +12,7 @@ nav:
     - Advanced: advanced.md
     - API: api.md
     - Download: download.md
+    - Report: report.md
 theme:
   name: material
   custom_dir: overrides
