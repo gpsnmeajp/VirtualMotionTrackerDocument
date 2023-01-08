@@ -30,5 +30,16 @@ C#製管理ツールです。ドライバのインストールやアンインス
 必要なときだけ起動してください。毎度起動する必要はありません。  
 ルームセットアップをやり直したときは、このツールでの設定(Set RoomMatrix)もやり直してください。  
 
-## 苦労話
+## Hardship story / 苦労話
 [Virtual Motion Trackerを作ったときのノウハウ](https://qiita.com/gpsnmeajp/items/9c41654e6c89c6b9702f)
+
+## Functions
+もしあなたがOpenVR Driver開発中で、下記のような関数の設定にお悩みでしたら、本プロジェクトのソースが参考になります。  
+If you are developing the OpenVR Driver and have trouble use the functions like the ones below, this project source will be helpful.
+
++ GetRawTrackedDevicePoses
++ TrackedDeviceToPropertyContainer
++ TrackedDeviceAdded
++ UpdateBooleanComponent
++ UpdateScalarComponent
++ UpdateSkeletonComponent

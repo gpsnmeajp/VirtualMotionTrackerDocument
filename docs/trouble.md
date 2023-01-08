@@ -5,13 +5,26 @@ description: 問題と解決方法
 
 # Trouble / トラブル
 
+## Finger dosent work on VRChat / VRChatで指が動かない
+Applications that use Legacy input such as VRChat will not work unless they are recognized as Valve Index.  
+Use compatible controller mode and control the Trigger instead of the Finger.  
+VRChatなどLegacy inputを使用するアプリケーションは、Valve Indexとして認識させないと動作しません。  
+互換コントローラモードを使用し、指の操作にはFingerではなくTriggerを操作してください。  
+
+## Physical controller takes precedence (especially Virtual Desktop) / 物理コントローラが優先されてしまう(特にVirtual Desktop)
+Do not touch the physical controller when launching SteamVR, let the VMT recognize it and operate the virtual buttons.  
+SteamVRの起動時に物理コントローラを触らないで、VMTを認識させ仮想ボタンを操作してください。  
+
+Turning AddCompatibleControllerOnStartup or AddControllerOnStartup ON makes things a little easier.  
+AddCompatibleControllerOnStartupまたはAddControllerOnStartupをONにすると、少しやりやすくなります。
+
 ## Do not break the VMT files apart. / VMTのファイルはばらばらにしないでください。
 All placements within the VMT folder are important. Do not move only part of it.   
 VMTのフォルダ内の配置は全て重要です。一部だけを移動することはしないでください。
 
-## Doesn't work with specific VR applications / 特定のVRアプリケーションで動かない
-[Advanced](advanced.md) にある設定をしてください  
+## Doesn't work with specific VR applications(Non-compatible mode) / 特定のVRアプリケーションで動かない(Non-compatible mode)
 Make the settings in [Advanced](advanced.md)  
+[Advanced](advanced.md) にある設定をしてください  
 
 ## Unable to communicate with VMT / VMTと通信できません
 If you have not installed it, please install it.  

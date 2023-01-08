@@ -23,8 +23,8 @@ description: ダウンロードと注意
     Please don't use if you can not understand manual.  
     本サイトを一通りを読んで理解できない場合は、使用されないことを勧めします。  
 
-    For obvious defects or abnormal behavior, please set up an [issue](https://github.com/gpsnmeajp/VirtualMotionTracker/issues) with details.   
-    明らかな不具合や異常挙動に関しては、詳細を添えて[Issue](https://github.com/gpsnmeajp/VirtualMotionTracker/issues)を立ててください。  
+    For obvious defects or abnormal behavior, please set up an [Report](https://github.com/gpsnmeajp/VirtualMotionTracker/report/) with details.   
+    明らかな不具合や異常挙動に関しては、詳細を添えて[Report](https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/report/)してください。  
 
 ## For developers looking to distribute VMT-dependent software  / VMTに依存したソフトウェアを配布しようと考えている開発者へ
 !!! Note
@@ -42,11 +42,11 @@ description: ダウンロードと注意
 !!! Caution
     This software is free, non-warranty, and designed for developers who know how to use it.  
     For troubles that occur in combination with each software, ask each developer for support.  
-    Please make a support request to VMT **through** the developer of each software. 
+    Please make a support request to the developer of each software. 
    
     このソフトは、無料、無保証で、使い方がわかる開発者に向けて作成しています。  
     各ソフトウェアとの組み合わせで発生したトラブルは、まず各作者にサポートの依頼をしてください。  
-    VMTへのIssueは、各ソフトの開発者を**通して**行ってください。  
+    VMTへのReportは、各ソフトの開発者へ行ってください。  
 
 
 ## [Download on github / githubでダウンロード](https://github.com/gpsnmeajp/VirtualMotionTracker/releases)

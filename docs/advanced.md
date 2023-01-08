@@ -8,9 +8,11 @@ description: 応用的な使い方
 !!! Note
     There are some apps that need this work (Steam VR Input) and some that don't (Legacy Input).  
     If the official website of the VR app says "Set the role of tracker", this is likely to be necessary.  
+    Also, use compatibility mode if necessary.
 
     この作業は必要なアプリ(SteamVR Input)とそうでないアプリ(Legacy Input)があります。
     VRアプリの公式サイトに「トラッカーの役割を設定するように」と記載がある場合、この作業が必要になる可能性が高いです。
+    また、必要に合わせて互換モードも使用してください。
 
 
 ### 1. Preparation / 事前準備
