@@ -155,9 +155,9 @@ OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空�
 
 See 
 
-+ https://github.com/ValveSoftware/openvr/wiki/SteamVR-Skeletal-Input
-+ https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton
-+ https://github.com/ValveSoftware/openvr/wiki/Creating-a-Skeletal-Input-Driver
++ [SteamVR-Skeletal-Input](https://github.com/ValveSoftware/openvr/wiki/SteamVR-Skeletal-Input)
++ [Hand-Skeleton](https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton)
++ [Creating-a-Skeletal-Input-Driver](https://github.com/ValveSoftware/openvr/wiki/Creating-a-Skeletal-Input-Driver)
 
 |Identifier / 識別子|Type / 型|Detail / 内容|
 |---|---|---|
@@ -220,7 +220,7 @@ See
 !!! Note
     The values of x,y,z, qx,qy,qz, rx,ry,rz should be set according to vr_glove_left_model.fbx, vr_glove_right_model.fbx.  
     x,y,z, qx,qy,qz, rx,ry,rz の値は、vr_glove_left_model.fbx, vr_glove_right_model.fbxにもとづいて設定する必要があります。  
-    https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton
+    [See Hand-Skeleton](https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton)
 
 **/VMT/Skeleton/Scolar index, boneSetIndex, value, 0, 0**  
 Bone set unit, and Linear space. (Strongly Recommended)  
@@ -408,7 +408,7 @@ Driver space / ドライバ空間
 SteamVR has the ability to overwrite the orientation of an existing device with the specified device orientation for debugging the device under development.   
 SteamVRには、開発中のデバイスのデバッグのため、既存のデバイスの姿勢を指定したデバイスの姿勢で上書きする機能があります。  
 
-[https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides](https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides)
+[TrackingOverrides](https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides)
 
 As an example, if you add the following description to steamvr.vrsettings, you can control tracker 0 = HMD, 1 = left hand, 2 = right hand.   
 例として、steamvr.vrsettingsに以下の記述を追加すると、トラッカー0=HMD, 1=左手, 2=右手の制御ができます。  
