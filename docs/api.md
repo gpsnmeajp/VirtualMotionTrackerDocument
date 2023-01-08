@@ -101,54 +101,54 @@ public class sendme : MonoBehaviour
     TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).  
     種別(トラッカー or コントローラ)はデバイス登録時(SteamVR起動時からの初回のみ)反映されます。  
 
-**/VMT/Room/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw**  
+**/VMT/Room/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**  
 Unity lik Left-handed space, Quaternion, and Room space. (Recommended)  
 Unityと同じ左手系かつ、クォータニオンかつ、ルーム空間(推奨)  
 
-**/VMT/Room/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz**  
+**/VMT/Room/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz**  
 Unity lik Left-handed space, Euler angles, and Room space.  
 Unityと同じ左手系かつ、オイラー角かつ、ルーム空間(推奨)  
 
-**/VMT/Room/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw**   
+**/VMT/Room/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**   
 OpenVR Driver Right-handed space, Quaternion, and Room space.  
 OpenVR Driverの右手系かつ、クォータニオンかつ、ルーム空間  
 
 
-**/VMT/Raw/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw**  
+**/VMT/Raw/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**  
 Unity lik Left-handed space, Quaternion, and Driver space.  
 Unityと同じ左手系かつ、クォータニオンかつ、ドライバー空間  
   
-**/VMT/Raw/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz**  
+**/VMT/Raw/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz**  
 Unity lik Left-handed space, Euler angles, and Driver space.  
 Unityと同じ左手系かつ、オイラー角かつ、ドライバー空間  
   
-**/VMT/Raw/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw**  
+**/VMT/Raw/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**  
 OpenVR Driver Right-handed space, Quaternion, and Driver space.  
 OpenVRの右手系かつ、クォータニオンかつ、ドライバー空間  
 
 
-**/VMT/Joint/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial**  
+**/VMT/Joint/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial**  
 Unity lik Left-handed space, Quaternion, and Traget device space(Traget device rotation).  
 Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス空間(回転はデバイス基準)  
   
-**/VMT/Joint/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
+**/VMT/Joint/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz, (string)serial**  
 Unity lik Left-handed space, Euler angles, and Traget device space(Traget device rotation).  
 Unityと同じ左手系かつ、オイラー角かつ、指定デバイス空間(回転はデバイス基準)  
   
-**/VMT/Joint/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial**  
+**/VMT/Joint/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial**  
 OpenVR Driver Right-handed space, Quaternion, and Traget device space(Traget device rotation).  
 OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空間(回転はデバイス基準)  
 
 
-**/VMT/Follow/Unity index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial**  
+**/VMT/Follow/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial**  
 Unity lik Left-handed space, Quaternion, and Traget device position(Room Rotation).  
 Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス位置(回転はルーム空間)  
   
-**/VMT/Follow/UEuler index, enable, timeoffset, x, y, z, rx, ry, rz, serial**  
+**/VMT/Follow/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz, (string)serial**  
 Unity lik Left-handed space, Euler angles, and Traget device position(Room Rotation).  
 Unityと同じ左手系かつ、オイラー角かつ、指定デバイス位置(回転はルーム空間)  
   
-**/VMT/Follow/Driver index, enable, timeoffset, x, y, z, qx, qy, qz, qw, serial**  
+**/VMT/Follow/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial**  
 OpenVR Driver Right-handed space, Quaternion, and Traget device position(Room Rotation).  
 OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空間(回転はルーム空間)  
 
@@ -233,25 +233,25 @@ Simple reproduction by hand opening degree value.
 
 ※0, 0 : = Reserved value (blend mode(0=FistToOpenHand), AxisLinkEnable(1=true, 0=false))
 
-**/VMT/Skeleton/Unity index, boneIndex, x, y, z, qx, qy, qz, qw**  
+**/VMT/Skeleton/Unity (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**  
 Per one bone, Unity lik Left-handed space, Quaternion, and Hand space. (Recommended)  
 It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
 ボーン1本単位、Unityと同じ左手系かつ、クォータニオンかつ、手空間  
 指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
-**/VMT/Skeleton/UEuler index, boneIndex, x, y, z, rx, ry, rz**  
+**/VMT/Skeleton/UEuler (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz**  
 Per one bone, Unity lik Left-handed space, Euler angles, and Hand space.  
 It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
 ボーン1本単位、Unityと同じ左手系かつ、オイラー角かつ、手空間  
 指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
-**/VMT/Skeleton/Driver index, boneIndex, x, y, z, qx, qy, qz, qw**   
+**/VMT/Skeleton/Driver (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**   
 Per one bone, OpenVR Driver Right-handed space, Quaternion, and Hand space.  
 It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_*_model.fbx on SteamVR.  
 ボーン1本単位、OpenVR Driverの右手系かつ、クォータニオンかつ、手空間  
 指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove_*_model.fbxを参照。
 
-**/VMT/Skeleton/Apply index, timeoffset**  
+**/VMT/Skeleton/Apply (int)index, (float)timeoffset**  
 Reflect registered bone information. (Required)  
 登録したボーン情報を反映する(必須)
 
@@ -282,42 +282,42 @@ Reflect registered bone information. (Required)
 |Thumb|Joystick 1|
 
 
-**/VMT/Input/Button index, buttonindex, timeoffset, value**  
+**/VMT/Input/Button (int)index, (int)buttonIndex, (float)timeoffset, (int)value**  
 Button input.
 ボタン入力  
 value(int):1=press, 0=Release  
 
-**/VMT/Input/Button/Touch index, buttonindex, timeoffset, value**  
+**/VMT/Input/Button/Touch (int)index, (int)buttonIndex, (float)timeoffset, (int)value**  
 Button touch input.
 ボタンのタッチ入力  
 value(int):1=press, 0=Release  
 
-**/VMT/Input/Trigger index, triggerindex, timeoffset, value**  
+**/VMT/Input/Trigger (int)index, (int)triggerIndex, (float)timeoffset, (float)value**  
 Trigger input.
 トリガー入力  
 value(float):0.0 ～ 1.0  
 
-**/VMT/Input/Trigger/Touch index, triggerindex, timeoffset, value**  
+**/VMT/Input/Trigger/Touch (int)index, (int)triggerIndex, (float)timeoffset, (int)value**  
 Trigger touch input.
 トリガータッチ入力  
 value(int):1=press, 0=Release  
 
-**/VMT/Input/Trigger/Click index, triggerindex, timeoffset, value**  
+**/VMT/Input/Trigger/Click (int)index, (int)triggerIndex, (float)timeoffset, (int)value**  
 Trigger click input.
 トリガークリック入力  
 value(int):1=press, 0=Release  
 
-**/VMT/Input/Joystick index, joystickindex, timeoffset, x, y**  
+**/VMT/Input/Joystick (int)index, (int)joystickIndex, (float)timeoffset, (float)x, (float)y**  
 Joystick input.
 ジョイスティック入力  
 x,y(float):-1.0 ～ 1.0  
   
-**/VMT/Input/Joystick/Touch index, joystickindex, timeoffset, x, y**  
+**/VMT/Input/Joystick/Touch (int)index, (int)joystickIndex, (float)timeoffset, (int)value**  
 Joystick touch input.
 ジョイスティックタッチ入力  
 value(int):1=press, 0=Release  
   
-**/VMT/Input/Joystick/Click index, joystickindex, timeoffset, x, y**  
+**/VMT/Input/Joystick/Click (int)index, (int)joystickIndex, (float)timeoffset, (int)value**  
 Joystick click input.
 ジョイスティッククリック入力  
 value(int):1=press, 0=Release  
@@ -341,17 +341,17 @@ Turn off all tracker.
 Reload driver setting json.
 ドライバーのjson設定を再読込します。  
   
-**/VMT/SetRoomMatrix m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12**  
+**/VMT/SetRoomMatrix (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
 Set and Save Room Matrix. Please do not send periodic. it writes setting on drive.    
 RoomToDriver空間変換行列を設定し保存します。  
 定期的に送信しないでください。これはディスクへの書き込みを行います。
 
-**/VMT/SetRoomMatrix/Temporary m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12**  
+**/VMT/SetRoomMatrix/Temporary (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
 Set Room Matrix temporary. It is volatile on restart.    
 RoomToDriver空間変換行列を一時的に設定します。  
 こちらは一時的に適用され、再起動すると揮発します。  
 
-**/VMT/SetAutoPoseUpdate enable**  
+**/VMT/SetAutoPoseUpdate (int)enable**  
 Set Pose auto update. 姿勢の自動更新をオンにします。  
 enable 1=on, 0=off  
 
@@ -359,11 +359,11 @@ enable 1=on, 0=off
 Get OpenVR device list string.   
 OpenVR デバイスのリストを返します。
 
-**/VMT/Subscribe/Device serial**  
+**/VMT/Subscribe/Device (string)serial**  
 Subscribe to OpenVR device coordinates and send every frame.  
 OpenVRデバイスの座標を購読し、毎フレーム送信します。  
 
-**/VMT/Unsubscribe/Device serial**  
+**/VMT/Unsubscribe/Device (string)serial**  
 Unsubscribing to OpenVR device coordinates  
 OpenVRデバイスの座標の購読の解除
 
@@ -371,44 +371,44 @@ OpenVRデバイスの座標の購読の解除
 Prompt user to restart Steam VR  
 Steam VRの再起動をユーザーに要求する
 
-**/VMT/SetDiagLog enable**  
+**/VMT/SetDiagLog (int)enable**  
 Enable / Disable diagnostic log. (Output to SteamVR Web　Console)
 診断用ログを有効/無効にする(SteamVR ウェブコンソールへ出力します)
 
-**/VMT/Config name value**  
+**/VMT/Config (string)name (string)value**  
 Write json configuration.  Please do not send periodic. it writes setting on drive.    
 JSON設定への書き込み  
 定期的に送信しないでください。これはディスクへの書き込みを行います。  
 name(string), value(string)
 
-**/VMT/Debug command**  
+**/VMT/Debug (string)command**  
 Debug command (See driver source.)  
 デバッグコマンド (ドライバソース参照)  
 command(string)
 
 ### Driver response /ドライバ側応答
-**/VMT/Out/Log stat,msg**  
+**/VMT/Out/Log (int)stat, (string)msg**  
 stat(int): Dialog message type / ダイアログメッセージ種別 (0=info,1=warn,2=err)  
 msg(string): Message メッセージ  
   
-**/VMT/Out/Alive version, installpath**  
+**/VMT/Out/Alive (string)version, (string)installpath**  
 version(string): Driver version / ドライババージョン  
 installpath(string): Driver install path / ドライバのインストールパス  
 
-**/VMT/Out/Haptic index, frequency, amplitude, duration**  
+**/VMT/Out/Haptic (int)index, (float)frequency, (float)amplitude, (float)duration**  
 frequency(float): frequency / 周波数  
 amplitude(float): amplitude / 振幅  
 duration(float): duration / 長さ  
 
-**/VMT/Out/Unavailable code, reason**  
+**/VMT/Out/Unavailable (int)code, (string)reason**  
 code(int): Unavailable code / 利用不可コード(0=Available/利用可能, 1=Room Matrix has not been set./ルーム行列が設定されていない)  
 reason(string): Reason(Human readable) / 詳細(人間が読む用)  
 
-**/VMT/Out/Devices/List info**  
+**/VMT/Out/Devices/List (string)info**  
 info(string): device list separated new line / 改行区切りのデバイス一覧
 
-**/VMT/Out/SubscribedDevice serial, x, y, z, qx, qy, qz, qw**  
-serial(string): device serial / デバイスシリアル  
+**/VMT/Out/SubscribedDevice (string)serial, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw**  
+serial(string): device (string)serial / デバイスシリアル  
 x,y,z(float): position / 位置  
 qx,qy,qz,qw: Rotation(Quaternion) / 回転(クォータニオン)  
 Driver space / ドライバ空間
