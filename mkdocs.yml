@@ -20,14 +20,7 @@ theme:
   features:
     - navigation.tabs
   palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
     - scheme: slate
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
 extra_css:
     - stylesheets/extra.css
 markdown_extensions:
