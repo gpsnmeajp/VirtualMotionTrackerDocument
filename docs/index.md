@@ -31,3 +31,5 @@ However, from now on, by using VMT, it will be possible to do it in a simple way
 - [Sample](sample.md)
 - [Download](download.md)
 - [Report](report.md)
+
+## [Discord](https://discord.gg/nGapSR7)
