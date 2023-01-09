@@ -177,7 +177,7 @@ See
     x,y,z, qx,qy,qz, rx,ry,rz の値は、vr_glove_left_model.fbx, vr_glove_right_model.fbxにもとづいて設定する必要があります。  
     [See Hand-Skeleton](https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton)
 
-**/VMT/Skeleton/Scolar (int)index, (int)boneSetIndex, (float)value, (int)0, (int)0**  
+**/VMT/Skeleton/Scalar (int)index, (int)boneSetIndex, (float)value, (int)0, (int)0**  
 Bone set unit, and Linear space. (Strongly Recommended)  
 Simple reproduction by hand opening degree value.  
 ボーンセット単位、直線空間(強く推奨)  

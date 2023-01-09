@@ -25,10 +25,14 @@ Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).
 /VMT/Raw/Unity
 
 ## [2_button_and_axis](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/2_button_and_axis)
-TODO
+### [buttonAndAxis.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/2_button_and_axis/buttonAndAxis.cs)
+
+![](/VirtualMotionTrackerDocument/sample/2_button_and_axis/inputtest.png)
 
 ## [3_simple_finger](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/3_simple_finger)
-TODO
+### [SimpleFinger.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/3_simple_finger/SimpleFinger.cs)
+![](/VirtualMotionTrackerDocument/sample/3_simple_finger/simple_finger.png)
+
 
 ## [4_strict_finger](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/4_strict_finger)
 TODO
@@ -37,6 +41,8 @@ TODO
 ### [WatchHMD.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/5_watch_hmd/WatchHMD.cs)
 /VMT/Subscribe/Device
 /VMT/Out/SubscribedDevice
+
+![](/VirtualMotionTrackerDocument/sample/5_watch_hmd/watch_hmd.png)
 
 # Developer tool / 開発ツール
 ## SkeletonPoseTester / 骨格姿勢テスター
