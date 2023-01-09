@@ -6,62 +6,14 @@ description: 技術的な使い方・プロトコル
 # API
 [SteamVRで自作のデバイスやソフトを簡単にトラッカーとして認識させる方法(バーチャルモーショントラッカー)](https://qiita.com/gpsnmeajp/items/29adc31f30e531fe8023)
 
-## Unity sample
-Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).  
-[hecomi/uOSC](https://github.com/hecomi/uOSC)を導入してください。  
-
-### Basic sample / 基本的なサンプル
-Sends the coordinates of the attached GameObject as a tracker.   
-アタッチされたGameObjectの座標をトラッカーとして送信します。  
+## Notice
 
 Some applications require SteamVR settings to recognize full body tracking.  
 一部のアプリケーションは、フルボディトラッキングを認識させるためにSteamVRの設定が必要です。  
 -> Setting: [Advanced](advanced.md)  
 
-![](/VirtualMotionTrackerDocument/image/unity.png)
-
-  
-```c#
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[RequireComponent(typeof(uOSC.uOscClient))]
-public class sendme : MonoBehaviour
-{
-    const int DISABLE = 0;
-    const int ENABLE_TRACKER = 1;
-    const int ENABLE_CONTROLLER_L = 2;
-    const int ENABLE_CONTROLLER_R = 3;
-    const int ENABLE_TRACKING_REFERENCE = 4;
-    const int ENABLE_CONTROLLER_L_COMPATIBLE = 5;
-    const int ENABLE_CONTROLLER_R_COMPATIBLE = 6;
-
-    uOSC.uOscClient client;
-    void Start()
-    {
-        client = GetComponent<uOSC.uOscClient>();
-    }
-
-    void Update()
-    {
-        const int index = 0;
-        const int enable = ENABLE_TRACKER;
-        const float timeoffset = 0f;
-
-        client.Send("/VMT/Room/Unity", (int)index, (int)enable, (float)timeoffset,
-            (float)transform.position.x,
-            (float)transform.position.y,
-            (float)transform.position.z,
-            (float)transform.rotation.x,
-            (float)transform.rotation.y,
-            (float)transform.rotation.z,
-            (float)transform.rotation.w
-        );
-    }
-}
-```
-
+## Sample
+→[Sample](sample.md)
 
 ## OSC Protocol / OSCプロトコル
 
