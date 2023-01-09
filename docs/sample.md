@@ -12,7 +12,7 @@ TODO
 ## 2_button_and_axis
 TODO
 
-## 3_sinple_finger
+## 3_simple_finger
 TODO
 
 ## 4_strict_finger
