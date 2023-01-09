@@ -363,7 +363,9 @@ info(string): device list separated new line / 改行区切りのデバイス一
 serial(string): device (string)serial / デバイスシリアル  
 x,y,z(float): position / 位置  
 qx,qy,qz,qw: Rotation(Quaternion) / 回転(クォータニオン)  
-Driver space / ドライバ空間
+
+OpenVR Driver Right-handed space, Quaternion, and Driver space.  
+OpenVR Driverの右手系かつ、クォータニオンかつ、ドライバー空間  
 
 ## Command line / コマンドライン引数
 |例|機能|
