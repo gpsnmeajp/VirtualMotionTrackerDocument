@@ -11,6 +11,7 @@ nav:
     - Trouble: trouble.md
     - Advanced: advanced.md
     - API: api.md
+    - Sample: sample.md
     - Download: download.md
     - Report: report.md
 theme:
