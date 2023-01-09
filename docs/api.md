@@ -164,10 +164,10 @@ See
 |Identifier / 識別子|Type / 型|Detail / 内容|
 |---|---|---|
 |index|int| Index(0～57) / インデックス(0～57)|
-|boneSetIndex|int| Bone set index / ボーンセットのインデックス|
-|boneIndex|int| Bone index / ボーンのインデックス|
+|boneSetIndex|int| Bone set index(0～5) / ボーンセットのインデックス(0～5)|
+|boneIndex|int| Bone index(0～30) / ボーンのインデックス(0～30)|
 |timeoffset|float| Timeoffset/補正時間。Always 0 / 基本的に0です|
-|value|float| Modulus of deformation of Fist to Open hand / こぶし～開いた手の係数|
+|value|float| Modulus of deformation of Fist to Open hand(0.0～1.0) / こぶし～開いた手の係数 (0.0～1.0)|
 |x,y,z|float| Position / 位置座標|
 |qx,qy,qz,qw|float| Rotation(Quaternion) / 回転(クォータニオン)|
 |rx,ry,rz|float| Rotation(Euler angles, Degree) / 回転(オイラー角, 度数法)|
