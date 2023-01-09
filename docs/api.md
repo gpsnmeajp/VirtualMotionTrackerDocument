@@ -436,17 +436,26 @@ As an example, if you add the following description to steamvr.vrsettings, you c
    },
 ```
 
-Buttons and sticks cannot be operated from the virtual tracker.  
-The operation from controller of original is accepted.  
-(You can do this by setting it in the opposite direction.)  
-ボタンやスティックの操作は仮想トラッカーからはできません。  
-コントローラ本体の操作が受け付けられます。  
-(逆方向に設定することで実現できます。)
-  
 Disabling the virtual tracker release the overwrite.  
 To work overwrite, the target HMD and controller must be powered on and properly tracked.   
 仮想トラッカーを無効にすると、上書きは解除されます。  
 上書きを機能させるには、対象のHMDとコントローラの電源が入っており、正常にトラッキングされている状態にする必要があります。  
+
+Buttons and sticks cannot be operated from the virtual tracker.  
+The operation from controller of original is accepted.  
+この場合、ボタンやスティックの操作は仮想トラッカーからはできません。  
+コントローラ本体の操作が受け付けられます。  
+
+If you want to use the posture of the physical tracker or controller to reflect the buttons and fingers in the VMT, you can do so by setting the orientation in the opposite direction.
+物理トラッカーやコントローラの姿勢を使い、ボタンや指をVMTで反映したいときは、逆向きに設定することで実現できます。
+
+```json
+   "TrackingOverrides" : {
+      "/devices/xxxx/xxxx" : "/devices/vmt/VMT_0",
+      "/devices/xxxx/yyyy" : "/devices/vmt/VMT_1",
+      "/devices/xxxx/zzzz" : "/devices/vmt/VMT_2"
+   },
+```
 
 ## setting.json
 

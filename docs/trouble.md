@@ -5,6 +5,21 @@ description: 問題と解決方法
 
 # Trouble / トラブル
 
+## SteamVR unstable / SteamVRが不安定になる
+Are you using SteamVR directly with your software (especially Unity)?
+Are you running other VR software on top of that?
+In that case, it may not work properly unless your software is set to Overlay.
+SteamVR cannot launch more than one VR software, but you can launch it without problems by setting the auxiliary software to Overlay.
+
+VMT Manager is set to Overlay.
+
+あなたのソフト(特にUnity)で、直接SteamVRを利用していませんか？
+さらにその上で別のVRソフトウェアを起動していませんか？
+その場合、あなたのソフトをOverlay設定にしないと正常に動作しないことがあります。
+SteamVRでは2つ以上のVRソフトは起動できませんが、補助用ソフトをOverlay設定にすることで問題なく起動できるようになります。
+
+なおVMT ManagerはOverlay設定になっています。
+
 ## Finger dosent work on VRChat / VRChatで指が動かない
 Applications that use Legacy input such as VRChat will not work unless they are recognized as Valve Index.  
 Use compatible controller mode and control the Trigger instead of the Finger.  
