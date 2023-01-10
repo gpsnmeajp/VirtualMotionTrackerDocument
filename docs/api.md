@@ -402,6 +402,13 @@ As an example, if you add the following description to steamvr.vrsettings, you c
    },
 ```
 
+
+You can check the device path on the SteamVR System Report screen.  
+Device Pathは、SteamVRシステムレポート画面で確認することができます。
+
+Device Path can be specified for From, and Device Path or semantic name can be specified for To.  
+FromにはDevice Path, ToにはDevice Pathあるいはsemantic nameが指定できます。
+
 Disabling the virtual tracker release the overwrite.  
 To work overwrite, the target HMD and controller must be powered on and properly tracked.   
 仮想トラッカーを無効にすると、上書きは解除されます。  
@@ -422,6 +429,30 @@ If you want to use the posture of the physical tracker or controller to reflect 
       "/devices/xxxx/zzzz" : "/devices/vmt/VMT_2"
    },
 ```
+
+|semantic name|
+|---|
+|/user/hand/right|
+|/user/hand/left|
+|/user/hand/primary|
+|/user/hand/secondary|
+|/user/head|
+|/user/gamepad|
+|/user/treadmill|
+|/user/stylus|
+|/user/foot/left|
+|/user/foot/right|
+|/user/shoulder/left|
+|/user/shoulder/right|
+|/user/elbow/left|
+|/user/elbow/right|
+|/user/knee/left|
+|/user/knee/right|
+|/user/waist|
+|/user/chest|
+|/user/camera|
+|/user/keyboard|
+
 
 ## setting.json
 
