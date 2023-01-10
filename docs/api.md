@@ -6,6 +6,18 @@ description: 技術的な使い方・プロトコル
 # API
 [SteamVRで自作のデバイスやソフトを簡単にトラッカーとして認識させる方法(バーチャルモーショントラッカー)](https://qiita.com/gpsnmeajp/items/29adc31f30e531fe8023)
 
+## OSC
+What is OSC(Open Sound Control)  
+OSCとは  
+
++ [OpenSound Control - Wikipedia](https://en.wikipedia.org/wiki/Open_Sound_Control)
++ [OpenSound Control - ウィキペディア](https://ja.wikipedia.org/wiki/OpenSound_Control)
++ [Spec 1.0 - OpenSoundControl.org](https://ccrma.stanford.edu/groups/osc/spec-1_0.html)
++ [Open Sound Control (OSC) 1.0 仕様 [日本語訳]](http://veritas-vos-liberabit.com/trans/OSC/OSC-spec-1_0.html)
+
+I recommended to use [uOSC](https://github.com/hecomi/uOSC) in Unity.  
+Unityでは[uOSC](https://github.com/hecomi/uOSC)の利用を推奨します。
+
 ## Notice
 
 Some applications require SteamVR settings to recognize full body tracking.  
