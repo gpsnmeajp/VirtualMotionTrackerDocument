@@ -306,16 +306,19 @@ Reload driver setting json.
 ドライバーのjson設定を再読込します。  
   
 **/VMT/SetRoomMatrix (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
+**/VMT/Set/RoomMatrix (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
 Set and Save Room Matrix. Please do not send periodic. it writes setting on drive.    
 RoomToDriver空間変換行列を設定し保存します。  
 定期的に送信しないでください。これはディスクへの書き込みを行います。
 
 **/VMT/SetRoomMatrix/Temporary (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
+**/VMT/Set/RoomMatrix/Temporary (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12**  
 Set Room Matrix temporary. It is volatile on restart.    
 RoomToDriver空間変換行列を一時的に設定します。  
 こちらは一時的に適用され、再起動すると揮発します。  
 
 **/VMT/SetAutoPoseUpdate (int)enable**  
+**/VMT/Set/AutoPoseUpdate (int)enable**  
 Set Pose auto update. 姿勢の自動更新をオンにします。  
 enable 1=on, 0=off  
 
@@ -336,6 +339,7 @@ Prompt user to restart Steam VR
 Steam VRの再起動をユーザーに要求する
 
 **/VMT/SetDiagLog (int)enable**  
+**/VMT/Set/DiagLog (int)enable**  
 Enable / Disable diagnostic log. (Output to SteamVR Web　Console)
 診断用ログを有効/無効にする(SteamVR ウェブコンソールへ出力します)
 
@@ -344,6 +348,10 @@ Write json configuration.  Please do not send periodic. it writes setting on dri
 JSON設定への書き込み  
 定期的に送信しないでください。これはディスクへの書き込みを行います。  
 name(string), value(string)
+
+**/VMT/Set/Destination (string)ip_address (int)port**  
+Switch  destination for OSC responses from the Driver.  
+DriverからのOSC応答の送信先を指定したものに切り替えます。
 
 **/VMT/Debug (string)command**  
 Debug command (See driver source.)  
