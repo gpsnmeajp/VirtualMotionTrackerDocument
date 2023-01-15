@@ -14,6 +14,7 @@ nav:
     - Sample: sample.md
     - Download: download.md
     - Report: report.md
+    - UseCase: usecase.md
 theme:
   name: material
   custom_dir: overrides
