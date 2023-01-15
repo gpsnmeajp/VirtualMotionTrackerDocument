@@ -31,7 +31,9 @@ C#製管理ツールです。ドライバのインストールやアンインス
 ルームセットアップをやり直したときは、このツールでの設定(Set RoomMatrix)もやり直してください。  
 
 ## Hardship story / 苦労話
-[Virtual Motion Trackerを作ったときのノウハウ](https://qiita.com/gpsnmeajp/items/9c41654e6c89c6b9702f)
+
++ [Virtual Motion Trackerを作ったときのノウハウ](https://qiita.com/gpsnmeajp/items/9c41654e6c89c6b9702f)
++ [Virtual Motion TrackerとSkeletal Input苦労録](https://qiita.com/gpsnmeajp/items/b3d53f41c1a1fa3aefe5)
 
 ## Functions
 もしあなたがOpenVR Driver開発中で、下記のような関数の設定にお悩みでしたら、本プロジェクトのソースが参考になります。  
