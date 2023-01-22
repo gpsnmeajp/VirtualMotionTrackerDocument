@@ -43,7 +43,7 @@ Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).
 Static Pose → Unity fbx (-x, y, z, -qx, qy, qz, -qw)  
 Unity fbx → VMT(/VMT/Skeleton/Unity) (-x, y, -z, -qw, qy, -qz, qw)  
 
-vr_glove_left_model.fbx, vr_glove_right_model.fbx
+vr_glove_left_model_slim.fbx, vr_glove_right_model_slim.fbx
 
 ## [5_watch_hmd](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/5_watch_hmd/)
 ### [WatchHMD.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/5_watch_hmd/WatchHMD.cs)
