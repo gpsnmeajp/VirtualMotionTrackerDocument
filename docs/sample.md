@@ -35,7 +35,7 @@ Please install asset [hecomi/uOSC](https://github.com/hecomi/uOSC).
 
 
 ## [4_strict_finger](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/4_strict_finger)
-### [WatchHMD.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/4_strict_finger/GloveControllerSneder.cs)
+### [GloveControllerSneder.cs](https://github.com/gpsnmeajp/VirtualMotionTrackerDocument/tree/main/sample/4_strict_finger/GloveControllerSneder.cs)
 /VMT/Skeleton/Unity  
 /VMT/Skeleton/Apply  
 /VMT/Room/Unity  
