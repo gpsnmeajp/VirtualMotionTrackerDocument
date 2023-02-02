@@ -41,6 +41,9 @@ VMTのフォルダ内の配置は全て重要です。一部だけを移動す�
 Make the settings in [Advanced](advanced.md)  
 [Advanced](advanced.md) にある設定をしてください  
 
+Or try turning AlwaysCompatible ON.  
+または、AlwaysCompatibleをONにしてみてください。
+
 ## Unable to communicate with VMT / VMTと通信できません
 If you have not installed it, please install it.  
 インストールしていない場合は、インストールしてください。  

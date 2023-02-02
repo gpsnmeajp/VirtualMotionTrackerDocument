@@ -60,6 +60,7 @@ Some applications require SteamVR settings to recognize full body tracking.
 |4|Tracking Reference|
 |5|Left Controller (Index compatible mode) / 左コントローラ(Index互換モード)|
 |6|Right Controller (Index compatible mode) / 右コントローラ(Index互換モード)|
+|7|Tracker (VIVE tracker compatible mode) / トラッカー(VIVE Tracker互換モード)|
 
 !!! Note
     TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).  
@@ -478,6 +479,7 @@ If you want to use the posture of the physical tracker or controller to reflect 
 	"AutoPoseUpdateOnStartup": "Auto Pose Update on Startup / 自動姿勢更新を起動時に有効にする",
 	"AddControllerOnStartup": "Add Controller On Startup / コントローラ追加を起動時に実施する",
 	"AddCompatibleControllerOnStartup": "Add Controller On Startup(Index Compatible) / コントローラ追加を起動時に実施する(Index 互換)",
-	"DiagLogOnStartup": "Diagn",
+	"DiagLogOnStartup": "Diaglo enable on startup / 起動時に診断ログを有効化",
+	"AlwaysCompatible": "Controller, Tracker as Always Compatible mode / コントローラ, トラッカーを常時互換モードにする",
 }
 ```
