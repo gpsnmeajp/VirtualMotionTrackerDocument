@@ -15,6 +15,7 @@ public class SimpleTrackerRaw : MonoBehaviour
     const int ENABLE_TRACKING_REFERENCE = 4;
     const int ENABLE_CONTROLLER_L_COMPATIBLE = 5;
     const int ENABLE_CONTROLLER_R_COMPATIBLE = 6;
+    const int ENABLE_TRACKER_COMPATIBLE = 7;
 
     uOSC.uOscClient client;
     void Start()
