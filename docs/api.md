@@ -388,6 +388,8 @@ OpenVR Driver Right-handed space, Quaternion, and Driver space.
 OpenVR Driverの右手系かつ、クォータニオンかつ、ドライバー空間  
 
 ## Command line / コマンドライン引数
+エラーがある場合は、処理は実行されません。
+
 |例|機能|
 |---|---|
 |c:\vmt_driver\vmt_manager\vmt_manager.exe install| Install driver / ドライバをインストールします|
