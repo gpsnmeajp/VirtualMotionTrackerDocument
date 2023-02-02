@@ -392,6 +392,7 @@ OpenVR Driverの右手系かつ、クォータニオンかつ、ドライバー�
 |---|---|
 |c:\vmt_driver\vmt_manager\vmt_manager.exe install| Install driver / ドライバをインストールします|
 |c:\vmt_driver\vmt_manager\vmt_manager.exe uninstall| Uninstall driver / ドライバをアンインストールします|
+|c:\vmt_driver\vmt_manager\vmt_manager.exe setroommatrix| Set Room Matrix / Set Room Matrixを実行します|
 
 ## Tracking Override
 SteamVR has the ability to overwrite the orientation of an existing device with the specified device orientation for debugging the device under development.   
