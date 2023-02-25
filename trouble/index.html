@@ -1,0 +1,1102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="問題と解決方法">
+      
+      
+      
+        <link rel="canonical" href="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/trouble/">
+      
+      
+        <link rel="prev" href="../setup/">
+      
+      
+        <link rel="next" href="../advanced/">
+      
+      <link rel="icon" href="../image/Ready32x32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+    
+    
+      
+        <title>Trouble - Virtual Motion Tracker - OSC OpenVR Driver</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Virtual Motion Tracker - OSC OpenVR Driver - Trouble" />
+  <meta property="og:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta property="og:url" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/trouble/" />
+  <meta property="og:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virtual Motion Tracker - OSC OpenVR Driver - Trouble" />
+  <meta name="twitter:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta name="twitter:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta name="google-site-verification" content="d5IN1nIVy3RY8j8YuhOxvh1VRjzUw6xY00KYjCGKZAI" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trouble" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-header__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtual Motion Tracker - OSC OpenVR Driver
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Trouble
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../howitworks/" class="md-tabs__link">
+      How it works
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup/" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Trouble
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../advanced/" class="md-tabs__link">
+      Advanced
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../sample/" class="md-tabs__link">
+      Sample
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../download/" class="md-tabs__link">
+      Download
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../report/" class="md-tabs__link">
+      Report
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../usecase/" class="md-tabs__link">
+      UseCase
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-nav__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    Virtual Motion Tracker - OSC OpenVR Driver
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitworks/" class="md-nav__link">
+        How it works
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Trouble
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Trouble
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-unstable-steamvr" class="md-nav__link">
+    SteamVR unstable / SteamVRが不安定になる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finger-dosent-work-on-vrchat-vrchat" class="md-nav__link">
+    Finger dosent work on VRChat / VRChatで指が動かない
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-controller-takes-precedence-especially-virtual-desktop-virtual-desktop" class="md-nav__link">
+    Physical controller takes precedence (especially Virtual Desktop) / 物理コントローラが優先されてしまう(特にVirtual Desktop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-not-break-the-vmt-files-apart-vmt" class="md-nav__link">
+    Do not break the VMT files apart. / VMTのファイルはばらばらにしないでください。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doesnt-work-with-specific-vr-applicationsnon-compatible-mode-vrnon-compatible-mode" class="md-nav__link">
+    Doesn't work with specific VR applications(Non-compatible mode) / 特定のVRアプリケーションで動かない(Non-compatible mode)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unable-to-communicate-with-vmt-vmt" class="md-nav__link">
+    Unable to communicate with VMT / VMTと通信できません
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-not-set" class="md-nav__link">
+    Room matrix is not set / ルーム行列が設定されていません
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-red" class="md-nav__link">
+    Room matrix is red / ルーム行列が赤色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-defferent" class="md-nav__link">
+    Room matrix is defferent / ルーム変換行列が違う
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-failure-when-uninstalling" class="md-nav__link">
+    Communication failure when uninstalling / アンインストール時に通信失敗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#another-version-of-vmt-is-installed-vmt" class="md-nav__link">
+    Another version of VMT is installed / 違うバージョンのVMTがインストールされている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmt-is-already-installed-vmt" class="md-nav__link">
+    VMT is already installed. / すでにVMTがインストールされている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-is-not-available-steamvr" class="md-nav__link">
+    SteamVR is not available / SteamVRが利用できない
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirehmd-is-false-requirehmdfalse" class="md-nav__link">
+    requireHmd is false  / requireHmdがfalseに設定されている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmt-is-disabled-in-steam-vr-vmtsteam-vr" class="md-nav__link">
+    VMT is disabled in Steam VR. / VMTがSteam VRで無効にされている
+  </a>
+  
+    <nav class="md-nav" aria-label="VMT is disabled in Steam VR. / VMTがSteam VRで無効にされている">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-steam-vr-settings-steam-vr" class="md-nav__link">
+    Open Steam VR settings. / Steam VRの設定を開く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-manage-add-ons-manage-add-ons" class="md-nav__link">
+    Open Manage ADD-ONS. / Manage ADD-ONS を開く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-on-vmt-and-restart-steamvr-vmtsteamvr" class="md-nav__link">
+    Turn on "vmt" and restart SteamVR. / vmtをオンにして、SteamVRを再起動する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-is-in-safe-mode-steamvr" class="md-nav__link">
+    SteamVR is in safe mode. / SteamVRがセーフモードになっている
+  </a>
+  
+    <nav class="md-nav" aria-label="SteamVR is in safe mode. / SteamVRがセーフモードになっている">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#click-manage-add-ons-manage-add-ons" class="md-nav__link">
+    Click "Manage Add-ons". / Manage Add-onsをクリックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-unblock-all-unblock-all" class="md-nav__link">
+    Click "UNBLOCK ALL" / UNBLOCK ALLをクリックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-steamvr" class="md-nav__link">
+    Restart SteamVR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-available-on-32bit-os-32bit-os" class="md-nav__link">
+    Not available on 32bit OS. / 32bit OSでは利用できません
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample/" class="md-nav__link">
+        Sample
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecase/" class="md-nav__link">
+        UseCase
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-unstable-steamvr" class="md-nav__link">
+    SteamVR unstable / SteamVRが不安定になる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finger-dosent-work-on-vrchat-vrchat" class="md-nav__link">
+    Finger dosent work on VRChat / VRChatで指が動かない
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-controller-takes-precedence-especially-virtual-desktop-virtual-desktop" class="md-nav__link">
+    Physical controller takes precedence (especially Virtual Desktop) / 物理コントローラが優先されてしまう(特にVirtual Desktop)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-not-break-the-vmt-files-apart-vmt" class="md-nav__link">
+    Do not break the VMT files apart. / VMTのファイルはばらばらにしないでください。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doesnt-work-with-specific-vr-applicationsnon-compatible-mode-vrnon-compatible-mode" class="md-nav__link">
+    Doesn't work with specific VR applications(Non-compatible mode) / 特定のVRアプリケーションで動かない(Non-compatible mode)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unable-to-communicate-with-vmt-vmt" class="md-nav__link">
+    Unable to communicate with VMT / VMTと通信できません
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-not-set" class="md-nav__link">
+    Room matrix is not set / ルーム行列が設定されていません
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-red" class="md-nav__link">
+    Room matrix is red / ルーム行列が赤色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#room-matrix-is-defferent" class="md-nav__link">
+    Room matrix is defferent / ルーム変換行列が違う
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-failure-when-uninstalling" class="md-nav__link">
+    Communication failure when uninstalling / アンインストール時に通信失敗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#another-version-of-vmt-is-installed-vmt" class="md-nav__link">
+    Another version of VMT is installed / 違うバージョンのVMTがインストールされている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmt-is-already-installed-vmt" class="md-nav__link">
+    VMT is already installed. / すでにVMTがインストールされている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-is-not-available-steamvr" class="md-nav__link">
+    SteamVR is not available / SteamVRが利用できない
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirehmd-is-false-requirehmdfalse" class="md-nav__link">
+    requireHmd is false  / requireHmdがfalseに設定されている
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmt-is-disabled-in-steam-vr-vmtsteam-vr" class="md-nav__link">
+    VMT is disabled in Steam VR. / VMTがSteam VRで無効にされている
+  </a>
+  
+    <nav class="md-nav" aria-label="VMT is disabled in Steam VR. / VMTがSteam VRで無効にされている">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-steam-vr-settings-steam-vr" class="md-nav__link">
+    Open Steam VR settings. / Steam VRの設定を開く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-manage-add-ons-manage-add-ons" class="md-nav__link">
+    Open Manage ADD-ONS. / Manage ADD-ONS を開く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-on-vmt-and-restart-steamvr-vmtsteamvr" class="md-nav__link">
+    Turn on "vmt" and restart SteamVR. / vmtをオンにして、SteamVRを再起動する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steamvr-is-in-safe-mode-steamvr" class="md-nav__link">
+    SteamVR is in safe mode. / SteamVRがセーフモードになっている
+  </a>
+  
+    <nav class="md-nav" aria-label="SteamVR is in safe mode. / SteamVRがセーフモードになっている">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#click-manage-add-ons-manage-add-ons" class="md-nav__link">
+    Click "Manage Add-ons". / Manage Add-onsをクリックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-unblock-all-unblock-all" class="md-nav__link">
+    Click "UNBLOCK ALL" / UNBLOCK ALLをクリックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-steamvr" class="md-nav__link">
+    Restart SteamVR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-available-on-32bit-os-32bit-os" class="md-nav__link">
+    Not available on 32bit OS. / 32bit OSでは利用できません
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="trouble">Trouble / トラブル<a class="headerlink" href="#trouble" title="Permanent link">⚓︎</a></h1>
+<h2 id="steamvr-unstable-steamvr">SteamVR unstable / SteamVRが不安定になる<a class="headerlink" href="#steamvr-unstable-steamvr" title="Permanent link">⚓︎</a></h2>
+<p>Are you using SteamVR directly with your software (especially Unity)?
+Are you running other VR software on top of that?
+In that case, it may not work properly unless your software is set to Overlay.
+SteamVR cannot launch more than one VR software, but you can launch it without problems by setting the auxiliary software to Overlay.</p>
+<p>VMT Manager is set to Overlay.</p>
+<p>あなたのソフト(特にUnity)で、直接SteamVRを利用していませんか？
+さらにその上で別のVRソフトウェアを起動していませんか？
+その場合、あなたのソフトをOverlay設定にしないと正常に動作しないことがあります。
+SteamVRでは2つ以上のVRソフトは起動できませんが、補助用ソフトをOverlay設定にすることで問題なく起動できるようになります。</p>
+<p>なおVMT ManagerはOverlay設定になっています。</p>
+<h2 id="finger-dosent-work-on-vrchat-vrchat">Finger dosent work on VRChat / VRChatで指が動かない<a class="headerlink" href="#finger-dosent-work-on-vrchat-vrchat" title="Permanent link">⚓︎</a></h2>
+<p>Applications that use Legacy input such as VRChat will not work unless they are recognized as Valve Index.<br />
+Use compatible controller mode and control the Trigger instead of the Finger.<br />
+VRChatなどLegacy inputを使用するアプリケーションは、Valve Indexとして認識させないと動作しません。<br />
+互換コントローラモードを使用し、指の操作にはFingerではなくTriggerを操作してください。  </p>
+<h2 id="physical-controller-takes-precedence-especially-virtual-desktop-virtual-desktop">Physical controller takes precedence (especially Virtual Desktop) / 物理コントローラが優先されてしまう(特にVirtual Desktop)<a class="headerlink" href="#physical-controller-takes-precedence-especially-virtual-desktop-virtual-desktop" title="Permanent link">⚓︎</a></h2>
+<p>Do not touch the physical controller when launching SteamVR, let the VMT recognize it and operate the virtual buttons.<br />
+SteamVRの起動時に物理コントローラを触らないで、VMTを認識させ仮想ボタンを操作してください。  </p>
+<p>Turning AddCompatibleControllerOnStartup or AddControllerOnStartup ON makes things a little easier.<br />
+AddCompatibleControllerOnStartupまたはAddControllerOnStartupをONにすると、少しやりやすくなります。</p>
+<h2 id="do-not-break-the-vmt-files-apart-vmt">Do not break the VMT files apart. / VMTのファイルはばらばらにしないでください。<a class="headerlink" href="#do-not-break-the-vmt-files-apart-vmt" title="Permanent link">⚓︎</a></h2>
+<p>All placements within the VMT folder are important. Do not move only part of it. <br />
+VMTのフォルダ内の配置は全て重要です。一部だけを移動することはしないでください。</p>
+<h2 id="doesnt-work-with-specific-vr-applicationsnon-compatible-mode-vrnon-compatible-mode">Doesn't work with specific VR applications(Non-compatible mode) / 特定のVRアプリケーションで動かない(Non-compatible mode)<a class="headerlink" href="#doesnt-work-with-specific-vr-applicationsnon-compatible-mode-vrnon-compatible-mode" title="Permanent link">⚓︎</a></h2>
+<p>Make the settings in <a href="../advanced/">Advanced</a><br />
+<a href="../advanced/">Advanced</a> にある設定をしてください  </p>
+<p>Or try turning AlwaysCompatible ON.<br />
+または、AlwaysCompatibleをONにしてみてください。</p>
+<h2 id="unable-to-communicate-with-vmt-vmt">Unable to communicate with VMT / VMTと通信できません<a class="headerlink" href="#unable-to-communicate-with-vmt-vmt" title="Permanent link">⚓︎</a></h2>
+<p>If you have not installed it, please install it.<br />
+インストールしていない場合は、インストールしてください。  </p>
+<p>If it doesn't work after many attempts, check the following and fix it.  </p>
+<ul>
+<li>Is it blocked by a firewall? → unblock</li>
+<li>Is it placed in a folder path that includes Space, Japanese, Chinese, or other non-ASCII? → move not included path</li>
+<li>Is it placed in Program files?  → move other path</li>
+<li>Delete the VMT and try again from unzip.</li>
+</ul>
+<p>何度試してもだめな場合は、以下を確認し、修正してください。  </p>
+<ul>
+<li>ファイアーウォールで妨害されていないか → 解除してください</li>
+<li>日本語、中国語、その他ASCII外文字や空白を含むフォルダパスに置いていないか → 含まない場所においてください</li>
+<li>Program filesに置いていないか → 別の場所に移動してください</li>
+<li>VMTを削除して、再度解凍からやり直してみてください</li>
+</ul>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble2.png" /></p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/firewall.png" /></p>
+<h2 id="room-matrix-is-not-set">Room matrix is not set / ルーム行列が設定されていません<a class="headerlink" href="#room-matrix-is-not-set" title="Permanent link">⚓︎</a></h2>
+<p>"Set Room Matrix"を押してください。<br />
+Click "Set Room Matrix".</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble1.png" /></p>
+<h2 id="room-matrix-is-red">Room matrix is red / ルーム行列が赤色<a class="headerlink" href="#room-matrix-is-red" title="Permanent link">⚓︎</a></h2>
+<p>SteamVR is not working properly, such as the base station is not turned on or the HMD cannot see the base station. <br />
+ベースステーションの電源が入っていない、HMDからベースステーションが見えないなど、SteamVRが正常に動いていません。</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/troubleB.png" /></p>
+<h2 id="room-matrix-is-defferent">Room matrix is defferent / ルーム変換行列が違う<a class="headerlink" href="#room-matrix-is-defferent" title="Permanent link">⚓︎</a></h2>
+<p>After pressing "Check VMT_0 Position" Button, if the "VMT_0 Room Position" turns red even though you haven't run any applications, the room transformation matrix may have changed.
+Occurs when the room scale is set again. Press the "Set Room Matrix" button again. </p>
+<p>Check VMT_0 Positionを押した後、特にアプリケーションを動かしていないのにVMT_0 Room Position が赤色になる場合、ルーム変換行列が変わっている可能性があります。
+ルームスケールの設定をやり直した場合などに発生します。再度、"Set RoomMatrix"ボタンを押してください。</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/troubleC.png" /></p>
+<h2 id="communication-failure-when-uninstalling">Communication failure when uninstalling / アンインストール時に通信失敗<a class="headerlink" href="#communication-failure-when-uninstalling" title="Permanent link">⚓︎</a></h2>
+<p>If you press OK, it will try to uninstall, but the success rate is higher if you delete the entire VMT folder. <br />
+OKを押すとアンインストールを試しますが、VMTのフォルダごと消すほうが成功率は高いです。</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble3.png" /></p>
+<h2 id="another-version-of-vmt-is-installed-vmt">Another version of VMT is installed / 違うバージョンのVMTがインストールされている<a class="headerlink" href="#another-version-of-vmt-is-installed-vmt" title="Permanent link">⚓︎</a></h2>
+<p>Uninstall and restart SteamVR.<br />
+Uninstallをし、SteamVRを再起動してください</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble4.png" /></p>
+<h2 id="vmt-is-already-installed-vmt">VMT is already installed. / すでにVMTがインストールされている<a class="headerlink" href="#vmt-is-already-installed-vmt" title="Permanent link">⚓︎</a></h2>
+<p>Uninstall and restart SteamVR.<br />
+Uninstallをし、SteamVRを再起動してください</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble5.png" /></p>
+<h2 id="steamvr-is-not-available-steamvr">SteamVR is not available / SteamVRが利用できない<a class="headerlink" href="#steamvr-is-not-available-steamvr" title="Permanent link">⚓︎</a></h2>
+<p>In most cases, restarting SteamVR, waiting about a minute, and then starting VMT Manager will work. <br />
+多くの場合、SteamVRを再起動し、1分ほど待ってからVMT Managerを起動すると正常になります。</p>
+<p>If it doesn't work, check the following. </p>
+<ul>
+<li>Is the HMD connected?</li>
+<li>Is there an error on SteamVR?</li>
+<li>Is SteamVR installed successfully? </li>
+</ul>
+<p>正常にならない場合は、以下を確認してください</p>
+<ul>
+<li>HMDが接続されているか</li>
+<li>SteamVRにエラーが表示されていないか</li>
+<li>SteamVRが正常にインストールされているか</li>
+</ul>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble6.png" /></p>
+<h2 id="requirehmd-is-false-requirehmdfalse">requireHmd is false  / requireHmdがfalseに設定されている<a class="headerlink" href="#requirehmd-is-false-requirehmdfalse" title="Permanent link">⚓︎</a></h2>
+<p>Steam VR is in a special state. Operation in this state is not guaranteed.<br />
+Steam VRが特殊な状態になっています。この状態での動作は保証していません。</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble7.png" /></p>
+<h2 id="vmt-is-disabled-in-steam-vr-vmtsteam-vr">VMT is disabled in Steam VR. / VMTがSteam VRで無効にされている<a class="headerlink" href="#vmt-is-disabled-in-steam-vr-vmtsteam-vr" title="Permanent link">⚓︎</a></h2>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble8_1.png" /></p>
+<h3 id="open-steam-vr-settings-steam-vr">Open Steam VR settings. / Steam VRの設定を開く<a class="headerlink" href="#open-steam-vr-settings-steam-vr" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble8_2.png" /></p>
+<h3 id="open-manage-add-ons-manage-add-ons">Open Manage ADD-ONS. / Manage ADD-ONS を開く<a class="headerlink" href="#open-manage-add-ons-manage-add-ons" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble8_3.png" /></p>
+<h3 id="turn-on-vmt-and-restart-steamvr-vmtsteamvr">Turn on "vmt" and restart SteamVR. / vmtをオンにして、SteamVRを再起動する<a class="headerlink" href="#turn-on-vmt-and-restart-steamvr-vmtsteamvr" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble8_4.png" /></p>
+<h2 id="steamvr-is-in-safe-mode-steamvr">SteamVR is in safe mode. / SteamVRがセーフモードになっている<a class="headerlink" href="#steamvr-is-in-safe-mode-steamvr" title="Permanent link">⚓︎</a></h2>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble9_1.png" /></p>
+<h3 id="click-manage-add-ons-manage-add-ons">Click "Manage Add-ons". / Manage Add-onsをクリックする<a class="headerlink" href="#click-manage-add-ons-manage-add-ons" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble9_2.png" /></p>
+<h3 id="click-unblock-all-unblock-all">Click "UNBLOCK ALL" / UNBLOCK ALLをクリックする<a class="headerlink" href="#click-unblock-all-unblock-all" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble9_3.png" /></p>
+<h3 id="restart-steamvr">Restart SteamVR<a class="headerlink" href="#restart-steamvr" title="Permanent link">⚓︎</a></h3>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/trouble9_4.png" /></p>
+<h2 id="not-available-on-32bit-os-32bit-os">Not available on 32bit OS. / 32bit OSでは利用できません<a class="headerlink" href="#not-available-on-32bit-os-32bit-os" title="Permanent link">⚓︎</a></h2>
+<p>Workaround: None<br />
+対処法: なし</p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/troubleA.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

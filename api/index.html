@@ -1,0 +1,1645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技術的な使い方・プロトコル">
+      
+      
+      
+        <link rel="canonical" href="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/api/">
+      
+      
+        <link rel="prev" href="../advanced/">
+      
+      
+        <link rel="next" href="../sample/">
+      
+      <link rel="icon" href="../image/Ready32x32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+    
+    
+      
+        <title>API - Virtual Motion Tracker - OSC OpenVR Driver</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Virtual Motion Tracker - OSC OpenVR Driver - API" />
+  <meta property="og:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta property="og:url" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/api/" />
+  <meta property="og:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virtual Motion Tracker - OSC OpenVR Driver - API" />
+  <meta name="twitter:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta name="twitter:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta name="google-site-verification" content="d5IN1nIVy3RY8j8YuhOxvh1VRjzUw6xY00KYjCGKZAI" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-header__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtual Motion Tracker - OSC OpenVR Driver
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../howitworks/" class="md-tabs__link">
+      How it works
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup/" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../trouble/" class="md-tabs__link">
+      Trouble
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../advanced/" class="md-tabs__link">
+      Advanced
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../sample/" class="md-tabs__link">
+      Sample
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../download/" class="md-tabs__link">
+      Download
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../report/" class="md-tabs__link">
+      Report
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../usecase/" class="md-tabs__link">
+      UseCase
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-nav__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    Virtual Motion Tracker - OSC OpenVR Driver
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitworks/" class="md-nav__link">
+        How it works
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trouble/" class="md-nav__link">
+        Trouble
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osc" class="md-nav__link">
+    OSC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    Notice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    Sample
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osc-protocol-osc" class="md-nav__link">
+    OSC Protocol / OSCプロトコル
+  </a>
+  
+    <nav class="md-nav" aria-label="OSC Protocol / OSCプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-tracker" class="md-nav__link">
+    Controle virtual tracker / 仮想トラッカー制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-skeleton" class="md-nav__link">
+    Controle virtual skeleton / 仮想ボーン制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input / 入力操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-control" class="md-nav__link">
+    Driver control / ドライバ操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-response" class="md-nav__link">
+    Driver response /ドライバ側応答
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    Command line / コマンドライン引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-override" class="md-nav__link">
+    Tracking Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingjson" class="md-nav__link">
+    setting.json
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample/" class="md-nav__link">
+        Sample
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecase/" class="md-nav__link">
+        UseCase
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osc" class="md-nav__link">
+    OSC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    Notice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    Sample
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osc-protocol-osc" class="md-nav__link">
+    OSC Protocol / OSCプロトコル
+  </a>
+  
+    <nav class="md-nav" aria-label="OSC Protocol / OSCプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-tracker" class="md-nav__link">
+    Controle virtual tracker / 仮想トラッカー制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controle-virtual-skeleton" class="md-nav__link">
+    Controle virtual skeleton / 仮想ボーン制御
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input / 入力操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-control" class="md-nav__link">
+    Driver control / ドライバ操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-response" class="md-nav__link">
+    Driver response /ドライバ側応答
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    Command line / コマンドライン引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-override" class="md-nav__link">
+    Tracking Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingjson" class="md-nav__link">
+    setting.json
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">⚓︎</a></h1>
+<p><a href="https://qiita.com/gpsnmeajp/items/29adc31f30e531fe8023">SteamVRで自作のデバイスやソフトを簡単にトラッカーとして認識させる方法(バーチャルモーショントラッカー)</a></p>
+<h2 id="osc">OSC<a class="headerlink" href="#osc" title="Permanent link">⚓︎</a></h2>
+<p>What is OSC(Open Sound Control)<br />
+OSCとは  </p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Open_Sound_Control">OpenSound Control - Wikipedia</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/OpenSound_Control">OpenSound Control - ウィキペディア</a></li>
+<li><a href="https://ccrma.stanford.edu/groups/osc/spec-1_0.html">Spec 1.0 - OpenSoundControl.org</a></li>
+<li><a href="http://veritas-vos-liberabit.com/trans/OSC/OSC-spec-1_0.html">Open Sound Control (OSC) 1.0 仕様 [日本語訳]</a></li>
+</ul>
+<p>I recommended to use <a href="https://github.com/hecomi/uOSC">uOSC</a> in Unity.<br />
+Unityでは<a href="https://github.com/hecomi/uOSC">uOSC</a>の利用を推奨します。</p>
+<h2 id="notice">Notice<a class="headerlink" href="#notice" title="Permanent link">⚓︎</a></h2>
+<p>Some applications require SteamVR settings to recognize full body tracking.<br />
+一部のアプリケーションは、フルボディトラッキングを認識させるためにSteamVRの設定が必要です。<br />
+-&gt; Setting: <a href="../advanced/">Advanced</a>  </p>
+<h2 id="sample">Sample<a class="headerlink" href="#sample" title="Permanent link">⚓︎</a></h2>
+<p>→<a href="../sample/">Sample</a></p>
+<h2 id="osc-protocol-osc">OSC Protocol / OSCプロトコル<a class="headerlink" href="#osc-protocol-osc" title="Permanent link">⚓︎</a></h2>
+<table>
+<thead>
+<tr>
+<th>Direction / 方向</th>
+<th>Port / ポート番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App → Driver</td>
+<td>39570</td>
+</tr>
+<tr>
+<td>Manager → Driver</td>
+<td>39570</td>
+</tr>
+<tr>
+<td>Manager ← Driver</td>
+<td>39571</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Note: Manager will not work if port 39571 is used. <br />
+注意: 39571が使用されているとManagerは動作しません。  </p>
+</div>
+<h3 id="controle-virtual-tracker">Controle virtual tracker / 仮想トラッカー制御<a class="headerlink" href="#controle-virtual-tracker" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>Identifier / 識別子</th>
+<th>Type / 型</th>
+<th>Detail / 内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>int</td>
+<td>Index(0～57). インデックス(0～57)</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>int</td>
+<td>mode (see below) / モード (下記参照)</td>
+</tr>
+<tr>
+<td>timeoffset</td>
+<td>float</td>
+<td>Timeoffset/補正時間。Always 0 / 基本的に0です</td>
+</tr>
+<tr>
+<td>x,y,z</td>
+<td>float</td>
+<td>Position / 位置座標</td>
+</tr>
+<tr>
+<td>qx,qy,qz,qw</td>
+<td>float</td>
+<td>Rotation(Quaternion) / 回転(クォータニオン)</td>
+</tr>
+<tr>
+<td>rx,ry,rz</td>
+<td>float</td>
+<td>Rotation(Euler angles, Degree) / 回転(オイラー角, 度数法)</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>string</td>
+<td>Joint, Follow target device serial / 追従対象のデバイスシリアル(LHR-xxxxxxx) or HMD(HMD)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>enable(int)</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Disable / 無効</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Tracker / トラッカー</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Left Controller / 左コントローラ</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Right Controller / 右コントローラ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tracking Reference</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Left Controller (Index compatible mode) / 左コントローラ(Index互換モード)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Right Controller (Index compatible mode) / 右コントローラ(Index互換モード)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Tracker (VIVE tracker compatible mode) / トラッカー(VIVE Tracker互換モード)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TType(Tracker or Controller) only works in first registration time. (from boot up of SteamVR).<br />
+種別(トラッカー or コントローラ)はデバイス登録時(SteamVR起動時からの初回のみ)反映されます。  </p>
+</div>
+<p><strong>/VMT/Room/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong><br />
+Unity lik Left-handed space, Quaternion, and Room space. (Recommended)<br />
+Unityと同じ左手系かつ、クォータニオンかつ、ルーム空間(推奨)  </p>
+<p><strong>/VMT/Room/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz</strong><br />
+Unity lik Left-handed space, Euler angles, and Room space.<br />
+Unityと同じ左手系かつ、オイラー角かつ、ルーム空間(推奨)  </p>
+<p><strong>/VMT/Room/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong> <br />
+OpenVR Driver Right-handed space, Quaternion, and Room space.<br />
+OpenVR Driverの右手系かつ、クォータニオンかつ、ルーム空間  </p>
+<p><strong>/VMT/Raw/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong><br />
+Unity lik Left-handed space, Quaternion, and Driver space.<br />
+Unityと同じ左手系かつ、クォータニオンかつ、ドライバー空間  </p>
+<p><strong>/VMT/Raw/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz</strong><br />
+Unity lik Left-handed space, Euler angles, and Driver space.<br />
+Unityと同じ左手系かつ、オイラー角かつ、ドライバー空間  </p>
+<p><strong>/VMT/Raw/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong><br />
+OpenVR Driver Right-handed space, Quaternion, and Driver space.<br />
+OpenVRの右手系かつ、クォータニオンかつ、ドライバー空間  </p>
+<p><strong>/VMT/Joint/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial</strong><br />
+Unity lik Left-handed space, Quaternion, and Traget device space(Traget device rotation).<br />
+Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス空間(回転はデバイス基準)  </p>
+<p><strong>/VMT/Joint/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz, (string)serial</strong><br />
+Unity lik Left-handed space, Euler angles, and Traget device space(Traget device rotation).<br />
+Unityと同じ左手系かつ、オイラー角かつ、指定デバイス空間(回転はデバイス基準)  </p>
+<p><strong>/VMT/Joint/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial</strong><br />
+OpenVR Driver Right-handed space, Quaternion, and Traget device space(Traget device rotation).<br />
+OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空間(回転はデバイス基準)  </p>
+<p><strong>/VMT/Follow/Unity (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial</strong><br />
+Unity lik Left-handed space, Quaternion, and Traget device position(Room Rotation).<br />
+Unityと同じ左手系かつ、クォータニオンかつ、指定デバイス位置(回転はルーム空間)  </p>
+<p><strong>/VMT/Follow/UEuler (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz, (string)serial</strong><br />
+Unity lik Left-handed space, Euler angles, and Traget device position(Room Rotation).<br />
+Unityと同じ左手系かつ、オイラー角かつ、指定デバイス位置(回転はルーム空間)  </p>
+<p><strong>/VMT/Follow/Driver (int)index, (int)enable, (float)timeoffset, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw, (string)serial</strong><br />
+OpenVR Driver Right-handed space, Quaternion, and Traget device position(Room Rotation).<br />
+OpenVRの右手系かつ、クォータニオンかつ、指定デバイス空間(回転はルーム空間)  </p>
+<h3 id="controle-virtual-skeleton">Controle virtual skeleton / 仮想ボーン制御<a class="headerlink" href="#controle-virtual-skeleton" title="Permanent link">⚓︎</a></h3>
+<p>See </p>
+<ul>
+<li><a href="https://github.com/ValveSoftware/openvr/wiki/SteamVR-Skeletal-Input">SteamVR-Skeletal-Input</a></li>
+<li><a href="https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton">Hand-Skeleton</a></li>
+<li><a href="https://github.com/ValveSoftware/openvr/wiki/Creating-a-Skeletal-Input-Driver">Creating-a-Skeletal-Input-Driver</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Identifier / 識別子</th>
+<th>Type / 型</th>
+<th>Detail / 内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>int</td>
+<td>Index(0～57) / インデックス(0～57)</td>
+</tr>
+<tr>
+<td>boneSetIndex</td>
+<td>int</td>
+<td>Bone set index(0～5) / ボーンセットのインデックス(0～5)</td>
+</tr>
+<tr>
+<td>boneIndex</td>
+<td>int</td>
+<td>Bone index(0～30) / ボーンのインデックス(0～30)</td>
+</tr>
+<tr>
+<td>timeoffset</td>
+<td>float</td>
+<td>Timeoffset/補正時間。Always 0 / 基本的に0です</td>
+</tr>
+<tr>
+<td>value</td>
+<td>float</td>
+<td>Modulus of deformation of Fist to Open hand(0.0～1.0) / こぶし～開いた手の係数 (0.0～1.0)</td>
+</tr>
+<tr>
+<td>x,y,z</td>
+<td>float</td>
+<td>Position / 位置座標</td>
+</tr>
+<tr>
+<td>qx,qy,qz,qw</td>
+<td>float</td>
+<td>Rotation(Quaternion) / 回転(クォータニオン)</td>
+</tr>
+<tr>
+<td>rx,ry,rz</td>
+<td>float</td>
+<td>Rotation(Euler angles, Degree) / 回転(オイラー角, 度数法)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Bone set index / ボーンセットインデックス</th>
+<th>Detail / 内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RootAndWrist</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Thumb</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Middle</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Pinky (Little)</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Bone index / ボーンのインデックス</th>
+<th>Detail / 内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Thumb0_ThumbProximal</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Thumb1_ThumbIntermediate</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Thumb2_ThumbDistal</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Thumb3_ThumbEnd</td>
+<td>5</td>
+</tr>
+<tr>
+<td>IndexFinger0_IndexProximal</td>
+<td>6</td>
+</tr>
+<tr>
+<td>IndexFinger1_IndexIntermediate</td>
+<td>7</td>
+</tr>
+<tr>
+<td>IndexFinger2_IndexDistal</td>
+<td>8</td>
+</tr>
+<tr>
+<td>IndexFinger3_IndexDistal2</td>
+<td>9</td>
+</tr>
+<tr>
+<td>IndexFinger4_IndexEnd</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MiddleFinger0_MiddleProximal</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MiddleFinger1_MiddleIntermediate</td>
+<td>12</td>
+</tr>
+<tr>
+<td>MiddleFinger2_MiddleDistal</td>
+<td>13</td>
+</tr>
+<tr>
+<td>MiddleFinger3_MiddleDistal2</td>
+<td>14</td>
+</tr>
+<tr>
+<td>MiddleFinger4_MiddleEnd</td>
+<td>15</td>
+</tr>
+<tr>
+<td>RingFinger0_RingProximal</td>
+<td>16</td>
+</tr>
+<tr>
+<td>RingFinger1_RingIntermediate</td>
+<td>17</td>
+</tr>
+<tr>
+<td>RingFinger2_RingDistal</td>
+<td>18</td>
+</tr>
+<tr>
+<td>RingFinger3_RingDistal2</td>
+<td>19</td>
+</tr>
+<tr>
+<td>RingFinger4_RingEnd</td>
+<td>20</td>
+</tr>
+<tr>
+<td>PinkyFinger0_LittleProximal</td>
+<td>21</td>
+</tr>
+<tr>
+<td>PinkyFinger1_LittleIntermediate</td>
+<td>22</td>
+</tr>
+<tr>
+<td>PinkyFinger2_LittleDistal</td>
+<td>23</td>
+</tr>
+<tr>
+<td>PinkyFinger3_LittleDistal2</td>
+<td>24</td>
+</tr>
+<tr>
+<td>PinkyFinger4_LittleEnd</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Aux_Thumb_ThumbHelper</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Aux_IndexFinger_IndexHelper</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Aux_MiddleFinger_MiddleHelper</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Aux_RingFinger_RingHelper</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Aux_PinkyFinger_LittleHelper</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bone information is reflected by <strong>Apply</strong> after registering for each bone.<br />
+ボーン情報は、ボーン単位で登録した後、<strong>Apply</strong>することで反映されます。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values of x,y,z, qx,qy,qz, rx,ry,rz should be set according to vr_glove_left_model.fbx, vr_glove_right_model.fbx.<br />
+x,y,z, qx,qy,qz, rx,ry,rz の値は、vr_glove_left_model.fbx, vr_glove_right_model.fbxにもとづいて設定する必要があります。<br />
+<a href="https://github.com/ValveSoftware/openvr/wiki/Hand-Skeleton">See Hand-Skeleton</a></p>
+</div>
+<p><strong>/VMT/Skeleton/Scalar (int)index, (int)boneSetIndex, (float)value, (int)0, (int)0</strong><br />
+Bone set unit, and Linear space. (Strongly Recommended)<br />
+Simple reproduction by hand opening degree value.<br />
+ボーンセット単位、直線空間(強く推奨)<br />
+手の開き具合値による簡易再現</p>
+<p>※0, 0 : = Reserved value (blend mode(0=FistToOpenHand), AxisLinkEnable(1=true, 0=false))</p>
+<p><strong>/VMT/Skeleton/Unity (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong><br />
+Per one bone, Unity lik Left-handed space, Quaternion, and Hand space. (Recommended)<br />
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_<em><em>model.fbx on SteamVR.<br />
+ボーン1本単位、Unityと同じ左手系かつ、クォータニオンかつ、手空間<br />
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove</em></em>_model.fbxを参照。</p>
+<p><strong>/VMT/Skeleton/UEuler (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)rx, (float)ry, (float)rz</strong><br />
+Per one bone, Unity lik Left-handed space, Euler angles, and Hand space.<br />
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_<em><em>model.fbx on SteamVR.<br />
+ボーン1本単位、Unityと同じ左手系かつ、オイラー角かつ、手空間<br />
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove</em></em>_model.fbxを参照。</p>
+<p><strong>/VMT/Skeleton/Driver (int)index, (int)boneIndex, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong> <br />
+Per one bone, OpenVR Driver Right-handed space, Quaternion, and Hand space.<br />
+It is possible to fully reproduce the hand by bone control including finger spacing and hand twist. See vr_glove_<em><em>model.fbx on SteamVR.<br />
+ボーン1本単位、OpenVR Driverの右手系かつ、クォータニオンかつ、手空間<br />
+指の間隔や手の捻りまで含めたボーン制御による手の完全再現が可能。SteamVRのvr_glove</em></em>_model.fbxを参照。</p>
+<p><strong>/VMT/Skeleton/Apply (int)index, (float)timeoffset</strong><br />
+Reflect registered bone information. (Required)<br />
+登録したボーン情報を反映する(必須)</p>
+<h3 id="input">Input / 入力操作<a class="headerlink" href="#input" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>範囲</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ButtonIndex(int)</td>
+<td>0～17</td>
+</tr>
+<tr>
+<td>TriggerIndex(int)</td>
+<td>0-8</td>
+</tr>
+<tr>
+<td>JoyStickIndex(int)</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td>timeoffset</td>
+<td>float</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Index Compatible</th>
+<th>Button and Axis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td>Button 0</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Button 1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Button 3</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Trigger 0</td>
+</tr>
+<tr>
+<td>Grip</td>
+<td>Trigger 1</td>
+</tr>
+<tr>
+<td>Grip Force</td>
+<td>Trigger 2</td>
+</tr>
+<tr>
+<td>Finger Index</td>
+<td>Trigger 3</td>
+</tr>
+<tr>
+<td>Finger Middle</td>
+<td>Trigger 4</td>
+</tr>
+<tr>
+<td>Finger Ring</td>
+<td>Trigger 5</td>
+</tr>
+<tr>
+<td>Finger Pinky</td>
+<td>Trigger 6</td>
+</tr>
+<tr>
+<td>Trackpad Force</td>
+<td>Trigger 7</td>
+</tr>
+<tr>
+<td>Trackpad</td>
+<td>Joystick 0</td>
+</tr>
+<tr>
+<td>Thumb</td>
+<td>Joystick 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>/VMT/Input/Button (int)index, (int)buttonIndex, (float)timeoffset, (int)value</strong><br />
+Button input.
+ボタン入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Button/Touch (int)index, (int)buttonIndex, (float)timeoffset, (int)value</strong><br />
+Button touch input.
+ボタンのタッチ入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Trigger (int)index, (int)triggerIndex, (float)timeoffset, (float)value</strong><br />
+Trigger input.
+トリガー入力<br />
+value(float):0.0 ～ 1.0  </p>
+<p><strong>/VMT/Input/Trigger/Touch (int)index, (int)triggerIndex, (float)timeoffset, (int)value</strong><br />
+Trigger touch input.
+トリガータッチ入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Trigger/Click (int)index, (int)triggerIndex, (float)timeoffset, (int)value</strong><br />
+Trigger click input.
+トリガークリック入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Joystick (int)index, (int)joystickIndex, (float)timeoffset, (float)x, (float)y</strong><br />
+Joystick input.
+ジョイスティック入力<br />
+x,y(float):-1.0 ～ 1.0  </p>
+<p><strong>/VMT/Input/Joystick/Touch (int)index, (int)joystickIndex, (float)timeoffset, (int)value</strong><br />
+Joystick touch input.
+ジョイスティックタッチ入力<br />
+value(int):1=press, 0=Release  </p>
+<p><strong>/VMT/Input/Joystick/Click (int)index, (int)joystickIndex, (float)timeoffset, (int)value</strong><br />
+Joystick click input.
+ジョイスティッククリック入力<br />
+value(int):1=press, 0=Release  </p>
+<h3 id="driver-control">Driver control / ドライバ操作<a class="headerlink" href="#driver-control" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>範囲</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ButtonIndex(int)</td>
+<td>0～17</td>
+</tr>
+<tr>
+<td>TriggerIndex(int)</td>
+<td>0-8</td>
+</tr>
+<tr>
+<td>JoyStickIndex(int)</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td>timeoffset</td>
+<td>float</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>string</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<p><strong>/VMT/Reset</strong><br />
+Turn off all tracker.
+すべてのトラッカーを電源オフにする  </p>
+<p><strong>/VMT/LoadSetting</strong><br />
+Reload driver setting json.
+ドライバーのjson設定を再読込します。  </p>
+<p><strong>/VMT/SetRoomMatrix (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12</strong><br />
+<strong>/VMT/Set/RoomMatrix (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12</strong><br />
+Set and Save Room Matrix. Please do not send periodic. it writes setting on drive.  <br />
+RoomToDriver空間変換行列を設定し保存します。<br />
+定期的に送信しないでください。これはディスクへの書き込みを行います。</p>
+<p><strong>/VMT/SetRoomMatrix/Temporary (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12</strong><br />
+<strong>/VMT/Set/RoomMatrix/Temporary (float)m1,(float)m2,(float)m3,(float)m4,(float)m5,(float)m6,(float)m7,(float)m8,(float)m9,(float)m10,(float)m11,(float)m12</strong><br />
+Set Room Matrix temporary. It is volatile on restart.  <br />
+RoomToDriver空間変換行列を一時的に設定します。<br />
+こちらは一時的に適用され、再起動すると揮発します。  </p>
+<p><strong>/VMT/SetAutoPoseUpdate (int)enable</strong><br />
+<strong>/VMT/Set/AutoPoseUpdate (int)enable</strong><br />
+Set Pose auto update. 姿勢の自動更新をオンにします。<br />
+enable 1=on, 0=off  </p>
+<p><strong>/VMT/Get/Devices/List</strong><br />
+Get OpenVR device list string. <br />
+OpenVR デバイスのリストを返します。</p>
+<p><strong>/VMT/Subscribe/Device (string)serial</strong><br />
+Subscribe to OpenVR device coordinates and send every frame.<br />
+OpenVRデバイスの座標を購読し、毎フレーム送信します。  </p>
+<p><strong>/VMT/Unsubscribe/Device (string)serial</strong><br />
+Unsubscribing to OpenVR device coordinates<br />
+OpenVRデバイスの座標の購読の解除</p>
+<p><strong>/VMT/RequestRestart</strong><br />
+Prompt user to restart Steam VR<br />
+Steam VRの再起動をユーザーに要求する</p>
+<p><strong>/VMT/SetDiagLog (int)enable</strong><br />
+<strong>/VMT/Set/DiagLog (int)enable</strong><br />
+Enable / Disable diagnostic log. (Output to SteamVR Web　Console)
+診断用ログを有効/無効にする(SteamVR ウェブコンソールへ出力します)</p>
+<p><strong>/VMT/Config (string)name (string)value</strong><br />
+Write json configuration.  Please do not send periodic. it writes setting on drive.  <br />
+JSON設定への書き込み<br />
+定期的に送信しないでください。これはディスクへの書き込みを行います。<br />
+name(string), value(string)</p>
+<p><strong>/VMT/Set/Destination (string)ip_address (int)port</strong><br />
+Switch  destination for OSC responses from the Driver.<br />
+DriverからのOSC応答の送信先を指定したものに切り替えます。</p>
+<p><strong>/VMT/Debug (string)command</strong><br />
+Debug command (See driver source.)<br />
+デバッグコマンド (ドライバソース参照)<br />
+command(string)</p>
+<h3 id="driver-response">Driver response /ドライバ側応答<a class="headerlink" href="#driver-response" title="Permanent link">⚓︎</a></h3>
+<p><strong>/VMT/Out/Log (int)stat, (string)msg</strong><br />
+stat(int): Dialog message type / ダイアログメッセージ種別 (0=info,1=warn,2=err)<br />
+msg(string): Message メッセージ  </p>
+<p><strong>/VMT/Out/Alive (string)version, (string)installpath</strong><br />
+version(string): Driver version / ドライババージョン<br />
+installpath(string): Driver install path / ドライバのインストールパス  </p>
+<p><strong>/VMT/Out/Haptic (int)index, (float)frequency, (float)amplitude, (float)duration</strong><br />
+frequency(float): frequency / 周波数<br />
+amplitude(float): amplitude / 振幅<br />
+duration(float): duration / 長さ  </p>
+<p><strong>/VMT/Out/Unavailable (int)code, (string)reason</strong><br />
+code(int): Unavailable code / 利用不可コード(0=Available/利用可能, 1=Room Matrix has not been set./ルーム行列が設定されていない)<br />
+reason(string): Reason(Human readable) / 詳細(人間が読む用)  </p>
+<p><strong>/VMT/Out/Devices/List (string)info</strong><br />
+info(string): device list separated new line / 改行区切りのデバイス一覧</p>
+<p><strong>/VMT/Out/SubscribedDevice (string)serial, (float)x, (float)y, (float)z, (float)qx, (float)qy, (float)qz, (float)qw</strong><br />
+serial(string): device (string)serial / デバイスシリアル<br />
+x,y,z(float): position / 位置<br />
+qx,qy,qz,qw: Rotation(Quaternion) / 回転(クォータニオン)  </p>
+<p>OpenVR Driver Right-handed space, Quaternion, and Driver space.<br />
+OpenVR Driverの右手系かつ、クォータニオンかつ、ドライバー空間  </p>
+<h2 id="command-line">Command line / コマンドライン引数<a class="headerlink" href="#command-line" title="Permanent link">⚓︎</a></h2>
+<p>エラーがある場合は、処理は実行されません。</p>
+<table>
+<thead>
+<tr>
+<th>例</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c:\vmt_driver\vmt_manager\vmt_manager.exe install</td>
+<td>Install driver / ドライバをインストールします</td>
+</tr>
+<tr>
+<td>c:\vmt_driver\vmt_manager\vmt_manager.exe uninstall</td>
+<td>Uninstall driver / ドライバをアンインストールします</td>
+</tr>
+<tr>
+<td>c:\vmt_driver\vmt_manager\vmt_manager.exe setroommatrix</td>
+<td>Set Room Matrix / Set Room Matrixを実行します</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tracking-override">Tracking Override<a class="headerlink" href="#tracking-override" title="Permanent link">⚓︎</a></h2>
+<p>SteamVR has the ability to overwrite the orientation of an existing device with the specified device orientation for debugging the device under development. <br />
+SteamVRには、開発中のデバイスのデバッグのため、既存のデバイスの姿勢を指定したデバイスの姿勢で上書きする機能があります。  </p>
+<p><a href="https://github.com/ValveSoftware/openvr/wiki/TrackingOverrides">TrackingOverrides</a></p>
+<p>As an example, if you add the following description to steamvr.vrsettings, you can control tracker 0 = HMD, 1 = left hand, 2 = right hand. <br />
+例として、steamvr.vrsettingsに以下の記述を追加すると、トラッカー0=HMD, 1=左手, 2=右手の制御ができます。  </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">   </span><span class="nt">&quot;TrackingOverrides&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;/devices/vmt/VMT_0&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/user/head&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;/devices/vmt/VMT_1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/user/hand/left&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;/devices/vmt/VMT_2&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/user/hand/right&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<p>You can check the device path on the SteamVR System Report screen.<br />
+Device Pathは、SteamVRシステムレポート画面で確認することができます。</p>
+<p>Device Path can be specified for From, and Device Path or semantic name can be specified for To.<br />
+FromにはDevice Path, ToにはDevice Pathあるいはsemantic nameが指定できます。</p>
+<p>Disabling the virtual tracker release the overwrite.<br />
+To work overwrite, the target HMD and controller must be powered on and properly tracked. <br />
+仮想トラッカーを無効にすると、上書きは解除されます。<br />
+上書きを機能させるには、対象のHMDとコントローラの電源が入っており、正常にトラッキングされている状態にする必要があります。  </p>
+<p>Buttons and sticks cannot be operated from the virtual tracker.<br />
+The operation from controller of original is accepted.<br />
+この場合、ボタンやスティックの操作は仮想トラッカーからはできません。<br />
+コントローラ本体の操作が受け付けられます。  </p>
+<p>If you want to use the posture of the physical tracker or controller to reflect the buttons and fingers in the VMT, you can do so by setting the orientation in the opposite direction.
+物理トラッカーやコントローラの姿勢を使い、ボタンや指をVMTで反映したいときは、逆向きに設定することで実現できます。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">   </span><span class="nt">&quot;TrackingOverrides&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;/devices/xxxx/xxxx&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/devices/vmt/VMT_0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;/devices/xxxx/yyyy&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/devices/vmt/VMT_1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;/devices/xxxx/zzzz&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/devices/vmt/VMT_2&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>semantic name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/user/hand/right</td>
+</tr>
+<tr>
+<td>/user/hand/left</td>
+</tr>
+<tr>
+<td>/user/hand/primary</td>
+</tr>
+<tr>
+<td>/user/hand/secondary</td>
+</tr>
+<tr>
+<td>/user/head</td>
+</tr>
+<tr>
+<td>/user/gamepad</td>
+</tr>
+<tr>
+<td>/user/treadmill</td>
+</tr>
+<tr>
+<td>/user/stylus</td>
+</tr>
+<tr>
+<td>/user/foot/left</td>
+</tr>
+<tr>
+<td>/user/foot/right</td>
+</tr>
+<tr>
+<td>/user/shoulder/left</td>
+</tr>
+<tr>
+<td>/user/shoulder/right</td>
+</tr>
+<tr>
+<td>/user/elbow/left</td>
+</tr>
+<tr>
+<td>/user/elbow/right</td>
+</tr>
+<tr>
+<td>/user/knee/left</td>
+</tr>
+<tr>
+<td>/user/knee/right</td>
+</tr>
+<tr>
+<td>/user/waist</td>
+</tr>
+<tr>
+<td>/user/chest</td>
+</tr>
+<tr>
+<td>/user/camera</td>
+</tr>
+<tr>
+<td>/user/keyboard</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settingjson">setting.json<a class="headerlink" href="#settingjson" title="Permanent link">⚓︎</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ReceivePort&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OSC Receive port / 受信ポート&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SendPort&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OSC Send port / 送信ポート&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;RoomMatrix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Room Matrix / ルーム行列&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OptoutTrackingRole&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Optout Tracking Role when tracker,tracking reference / トラッキングロールのオプトアウトを行うか(トラッカー、トラッキングリファレンス)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;RejectWhenCannotTracking&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stop when tracking lost / 異常時にトラッキングを停止するか&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SkeletonInput&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Skeleton Input Enable / 骨格入力有効&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AutoPoseUpdateOnStartup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto Pose Update on Startup / 自動姿勢更新を起動時に有効にする&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AddControllerOnStartup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Add Controller On Startup / コントローラ追加を起動時に実施する&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AddCompatibleControllerOnStartup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Add Controller On Startup(Index Compatible) / コントローラ追加を起動時に実施する(Index 互換)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DiagLogOnStartup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Diaglo enable on startup / 起動時に診断ログを有効化&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AlwaysCompatible&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Controller, Tracker as Always Compatible mode / コントローラ, トラッカーを常時互換モードにする&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

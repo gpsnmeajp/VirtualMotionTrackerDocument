@@ -1,0 +1,968 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="応用的な使い方">
+      
+      
+      
+        <link rel="canonical" href="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/advanced/">
+      
+      
+        <link rel="prev" href="../trouble/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      <link rel="icon" href="../image/Ready32x32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+    
+    
+      
+        <title>Advanced - Virtual Motion Tracker - OSC OpenVR Driver</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Virtual Motion Tracker - OSC OpenVR Driver - Advanced" />
+  <meta property="og:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta property="og:url" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/advanced/" />
+  <meta property="og:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virtual Motion Tracker - OSC OpenVR Driver - Advanced" />
+  <meta name="twitter:description" content="The OSC Virtual OpenVR Tracker Driver for your DIY tracking devices." />
+  <meta name="twitter:image" content="https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/image/vmt_vr_logo.png" />
+  <meta name="google-site-verification" content="d5IN1nIVy3RY8j8YuhOxvh1VRjzUw6xY00KYjCGKZAI" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-header__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtual Motion Tracker - OSC OpenVR Driver
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../howitworks/" class="md-tabs__link">
+      How it works
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup/" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../trouble/" class="md-tabs__link">
+      Trouble
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Advanced
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../sample/" class="md-tabs__link">
+      Sample
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../download/" class="md-tabs__link">
+      Download
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../report/" class="md-tabs__link">
+      Report
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../usecase/" class="md-tabs__link">
+      UseCase
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtual Motion Tracker - OSC OpenVR Driver" class="md-nav__button md-logo" aria-label="Virtual Motion Tracker - OSC OpenVR Driver" data-md-component="logo">
+      
+  <img src="../image/Ready32x32.png" alt="logo">
+
+    </a>
+    Virtual Motion Tracker - OSC OpenVR Driver
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gpsnmeajp/VirtualMotionTracker/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VirtualMotionTracker
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howitworks/" class="md-nav__link">
+        How it works
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trouble/" class="md-nav__link">
+        Trouble
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Advanced
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-the-controller-bainding" class="md-nav__link">
+    How to set the  controller bainding. / コントローラーバンディングの設定方法
+  </a>
+  
+    <nav class="md-nav" aria-label="How to set the  controller bainding. / コントローラーバンディングの設定方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    1. Preparation / 事前準備
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tracker-roll-settings" class="md-nav__link">
+    2. Tracker roll settings  / トラッカーロールの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creating-a-controller-bainding" class="md-nav__link">
+    3. Creating a controller bainding. / コントローラーバンディングの作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-there-are-extra-bindings-you-didnt-want-binding" class="md-nav__link">
+    If there are extra bindings you didn't want. /余分なBindingがある場合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screens" class="md-nav__link">
+    Screens / 各画面の解説
+  </a>
+  
+    <nav class="md-nav" aria-label="Screens / 各画面の解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomsetup" class="md-nav__link">
+    RoomSetup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    Json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    Uninstall / アンインストール
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample/" class="md-nav__link">
+        Sample
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecase/" class="md-nav__link">
+        UseCase
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-the-controller-bainding" class="md-nav__link">
+    How to set the  controller bainding. / コントローラーバンディングの設定方法
+  </a>
+  
+    <nav class="md-nav" aria-label="How to set the  controller bainding. / コントローラーバンディングの設定方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    1. Preparation / 事前準備
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tracker-roll-settings" class="md-nav__link">
+    2. Tracker roll settings  / トラッカーロールの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creating-a-controller-bainding" class="md-nav__link">
+    3. Creating a controller bainding. / コントローラーバンディングの作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-there-are-extra-bindings-you-didnt-want-binding" class="md-nav__link">
+    If there are extra bindings you didn't want. /余分なBindingがある場合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screens" class="md-nav__link">
+    Screens / 各画面の解説
+  </a>
+  
+    <nav class="md-nav" aria-label="Screens / 各画面の解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roomsetup" class="md-nav__link">
+    RoomSetup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    Json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    Uninstall / アンインストール
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="advanced">Advanced / 応用的な使い方<a class="headerlink" href="#advanced" title="Permanent link">⚓︎</a></h1>
+<h2 id="how-to-set-the-controller-bainding">How to set the  controller bainding. / コントローラーバンディングの設定方法<a class="headerlink" href="#how-to-set-the-controller-bainding" title="Permanent link">⚓︎</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are some apps that need this work (Steam VR Input) and some that don't (Legacy Input).<br />
+If the official website of the VR app says "Set the role of tracker", this is likely to be necessary.<br />
+Also, use compatibility mode if necessary.</p>
+<p>この作業は必要なアプリ(SteamVR Input)とそうでないアプリ(Legacy Input)があります。
+VRアプリの公式サイトに「トラッカーの役割を設定するように」と記載がある場合、この作業が必要になる可能性が高いです。
+また、必要に合わせて互換モードも使用してください。</p>
+</div>
+<h3 id="1-preparation">1. Preparation / 事前準備<a class="headerlink" href="#1-preparation" title="Permanent link">⚓︎</a></h3>
+<h4 id="1-start-steamvr-steamvr">1. Start SteamVR / SteamVRを起動<a class="headerlink" href="#1-start-steamvr-steamvr" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advA1.png" /></p>
+<h4 id="2-register-the-required-amount-of-vmt-vmt">2. Register the required amount of VMT. / 必要分のVMTを登録する<a class="headerlink" href="#2-register-the-required-amount-of-vmt-vmt" title="Permanent link">⚓︎</a></h4>
+<p>Press the Show all button to register all trackers.<br />
+Show allボタンを押すと全トラッカーが認識されます。
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv3.png" /></p>
+<h4 id="3-launch-the-app">3. Launch the app. / アプリを起動<a class="headerlink" href="#3-launch-the-app" title="Permanent link">⚓︎</a></h4>
+<h3 id="2-tracker-roll-settings">2. Tracker roll settings  / トラッカーロールの設定<a class="headerlink" href="#2-tracker-roll-settings" title="Permanent link">⚓︎</a></h3>
+<h4 id="1-open-tracker-setting">1. Open Tracker setting / トラッカー設定を開く<a class="headerlink" href="#1-open-tracker-setting" title="Permanent link">⚓︎</a></h4>
+<p>SteamVR → Controllers → MANAGE VIVE TRACKERS<br />
+SteamVRの設定→コントローラ→VIVEトラッカーの管理
+<img alt="" src="/VirtualMotionTrackerDocument/image/advA2.png" />
+<img alt="" src="/VirtualMotionTrackerDocument/image/advA3.png" /></p>
+<h4 id="2-set-tracker-role-left-foot-ritght-foot">2. Set tracker role. (Left foot, Ritght foot ...) /「トラッカーの役割」を設定(左足、右足など)<a class="headerlink" href="#2-set-tracker-role-left-foot-ritght-foot" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advA4.png" />
+<img alt="" src="/VirtualMotionTrackerDocument/image/advA5.png" /></p>
+<h4 id="3-close">3. Close / 閉じる<a class="headerlink" href="#3-close" title="Permanent link">⚓︎</a></h4>
+<h3 id="3-creating-a-controller-bainding">3. Creating a controller bainding. / コントローラーバンディングの作成<a class="headerlink" href="#3-creating-a-controller-bainding" title="Permanent link">⚓︎</a></h3>
+<h4 id="1-show-old-binding-ui-ui">1. Show old binding ui / 古いバインド設定UIを表示<a class="headerlink" href="#1-show-old-binding-ui-ui" title="Permanent link">⚓︎</a></h4>
+<p>SteamVR→Controllers→SHOW OLD BINDING UI<br />
+SteamVRの設定→コントローラ→古いバインド設定UIを表示<br />
+<img alt="" src="/VirtualMotionTrackerDocument/image/advA3.png" /></p>
+<h4 id="2-select-the-app-you-want-to-set">2. Select the app you want to set  / 設定したいアプリを選択<a class="headerlink" href="#2-select-the-app-you-want-to-set" title="Permanent link">⚓︎</a></h4>
+<p>It will not be displayed if it is not app started. <br />
+アプリを起動していないと表示されません<br />
+<img alt="" src="/VirtualMotionTrackerDocument/image/advB1.png" /></p>
+<h4 id="3-select-vmt-vmt">3. Select VMT / VMTを選択<a class="headerlink" href="#3-select-vmt-vmt" title="Permanent link">⚓︎</a></h4>
+<p>From "Current Controller", select the VMT for each part. <br />
+「現在のコントローラ」から、各部位別のVMTを選択します。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>vmt_leftfoot, vmt_rightfoot, etc.   </p>
+<p>If you don't see this, you may not have "Tracker Role" set or you are using something older than VMT_009. Try using the latest VMT.)<br />
+これが出ない場合は、「トラッカーの役割」が設定されていないか、VMT_009より古いものを使用している可能性があります。最新のVMTを使用してみてください。</p>
+</div>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB2.png" />
+<img alt="" src="/VirtualMotionTrackerDocument/image/advB3.png" /></p>
+<h4 id="4-select-create-new-binding">4. Select "Create New Binding" /「バインドの新規作成」を選択<a class="headerlink" href="#4-select-create-new-binding" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB4.png" /></p>
+<h4 id="5-select-edit-action-pose">5. Select "Edit Action Pose" /「アクションポーズの編集」を選択<a class="headerlink" href="#5-select-edit-action-pose" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB5.png" /></p>
+<h4 id="6-click-unused-in-the-pose">6. Click "Unused" in the pose / ポーズの「未使用」をクリック<a class="headerlink" href="#6-click-unused-in-the-pose" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB6.png" /></p>
+<h4 id="7-select-a-pose-action">7. Select a pose action  / ポーズアクションを選択<a class="headerlink" href="#7-select-a-pose-action" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB7.png" /></p>
+<h4 id="8-ok-pose-recomended-right_pose-poseok-right_pose">8. OK "<strong><em>pose" (Recomended: right_pose) /「</em></strong>pose」になればOK (right_poseが推奨)<a class="headerlink" href="#8-ok-pose-recomended-right_pose-poseok-right_pose" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB8.png" /></p>
+<h4 id="9-repeat-3-to-8-for-each-part-38">9. Repeat 3 to 8 for each part. / 各部位にて、3～8を繰り返します。<a class="headerlink" href="#9-repeat-3-to-8-for-each-part-38" title="Permanent link">⚓︎</a></h4>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/advB9.png" /></p>
+<h4 id="10-when-youre-done-click-back-to-save">10. When you're done, click "Back" to save  / 終わったら「戻る」で保存されます<a class="headerlink" href="#10-when-youre-done-click-back-to-save" title="Permanent link">⚓︎</a></h4>
+<h4 id="11-check-if-the-app-recognizes-it">11. Check if the app recognizes it. / アプリで認識しているかを確認します。<a class="headerlink" href="#11-check-if-the-app-recognizes-it" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If it doesn't work, try swapping poses<br />
+上手く動かない場合は、poseを入れ替えてみる</p>
+</div>
+<h3 id="if-there-are-extra-bindings-you-didnt-want-binding">If there are extra bindings you didn't want. /余分なBindingがある場合<a class="headerlink" href="#if-there-are-extra-bindings-you-didnt-want-binding" title="Permanent link">⚓︎</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that if you make a mistake, all SteamVR settings will be lost. <br />
+編集を誤るとSteamVRの設定がすべて消失するため注意してください。</p>
+</div>
+<p>C:\Program Files (x86)\Steam\config\steamvr.vrsettings<br />
+から必ずバックアップを取った後、「vmt」を含む行をすべて削除してみてください。</p>
+<p>C:\Program Files (x86)\Steam\config\steamvr.vrsettings<br />
+Be sure to make a backup from, and then try deleting all the lines that contain "vmt".</p>
+<h2 id="screens">Screens / 各画面の解説<a class="headerlink" href="#screens" title="Permanent link">⚓︎</a></h2>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">⚓︎</a></h3>
+<p>Install, uninstall, version information, error information<br />
+インストール、アンインストール、バージョン情報、エラー情報
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv1.png" /></p>
+<h3 id="roomsetup">RoomSetup<a class="headerlink" href="#roomsetup" title="Permanent link">⚓︎</a></h3>
+<p>Room matrix setting, position check<br />
+ルーム行列の設定、位置の動作確認<br />
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv2.png" /></p>
+<h3 id="control">Control<a class="headerlink" href="#control" title="Permanent link">⚓︎</a></h3>
+<p>All devices off, on, configuration reload, auto-update, load test <br />
+全デバイスのオフ、オン、設定の再読み込み、自動更新、負荷テスト
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv3.png" /></p>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">⚓︎</a></h3>
+<p>Confirmation of operation as a device controller.<br />
+デバイスのコントローラーとしての動作確認
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv4.png" /></p>
+<h3 id="device">Device<a class="headerlink" href="#device" title="Permanent link">⚓︎</a></h3>
+<p>Serial number of the tool to recognize<br />
+認識しているデバイスのシリアル番号一覧
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv5.png" /></p>
+<h3 id="json">Json<a class="headerlink" href="#json" title="Permanent link">⚓︎</a></h3>
+<p>Edit configuration file<br />
+設定ファイルの編集<br />
+<img alt="" src="/VirtualMotionTrackerDocument/image/adv6.png" /></p>
+<h2 id="uninstall">Uninstall / アンインストール<a class="headerlink" href="#uninstall" title="Permanent link">⚓︎</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is a reference procedure. if you do this, VMT will not be available until you reinstall it. <br />
+参考の手順です。当然ですが、これを実施するとVMTは再度インストールするまで使用できなくなります。  </p>
+</div>
+<p>Click "Uninstall" button. 
+Uninstallボタンをクリックします。  </p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/uninstall1.png" /></p>
+<p>Click "OK" button.<br />
+OKボタンをクリックします。  </p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/uninstall2.png" /></p>
+<p>Click "Yes" button.(If you want to reinstall immediately, you can click No.)<br />
+Yesボタンをクリックします。(すぐにインストールし直す場合はNoをクリックしても良いです。)  </p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/uninstall3.png" /></p>
+<p>Click "OK" button.<br />
+OKボタンをクリックします。  </p>
+<p><img alt="" src="/VirtualMotionTrackerDocument/image/uninstall4.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
