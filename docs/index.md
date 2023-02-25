@@ -7,6 +7,15 @@ description: Virtual Motion Trackerについて
 
 ![](/VirtualMotionTrackerDocument/image/vmt_vr.png?raw=true)
 
+!!! Warning
+    This software is **free** , **non-warranty** , and designed for developers who know how to use it.  
+    For troubles that occur in combination with each software, ask each developer for support.  
+    **DO NOT  REQUEST SUPPORT TO ME.**
+   
+    このソフトは、**無料** 、**無保証** で、使い方がわかる開発者に向けて作成しています。  
+    各ソフトウェアとの組み合わせで発生したトラブルは、各作者にサポートの依頼をしてください。  
+    **私にサポートの要求をしないこと。**
+
 ## What is Virtual Motion Tracker / バーチャルモーショントラッカーとは
 
 An easy-to-use virtual tracker driver for OpenVR. With your own device, your own software, and any.
@@ -21,15 +30,6 @@ However, from now on, by using VMT, it will be possible to do it in a simple way
 
 **This is not supported VMC Protocol ! It different use ! **  
 **VMC Protocolは使えません！別物です！**  
-
-!!! Warning
-    This software is **free** , **non-warranty** , and designed for developers who know how to use it.  
-    For troubles that occur in combination with each software, ask each developer for support.  
-    Please make a support request to the developer of each software. 
-   
-    このソフトは、**無料** 、**無保証** で、使い方がわかる開発者に向けて作成しています。  
-    各ソフトウェアとの組み合わせで発生したトラブルは、各作者にサポートの依頼をしてください。  
-    VMTへのReportは、各ソフトの開発者へ行ってください。  
 
 ## Menu
 - [How it works](howitworks.md)
